@@ -21,9 +21,11 @@ namespace QuanLyCuaHangVTNN
             // 
             // frmBanHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 560);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(245)))));
+            this.ClientSize = new System.Drawing.Size(930, 575);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Name = "frmBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lập Hóa đơn Bán hàng (Thanh toán đủ / Ghi nợ mùa vụ)";

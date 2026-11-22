@@ -21,6 +21,11 @@ namespace QuanLyCuaHangVTNN
             txtMatKhau.Text = "123";
         }
 
+        private void chkHienMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = !chkHienMatKhau.Checked;
+        }
+
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (txtTenDangNhap.Text.Trim() == "" || txtMatKhau.Text.Trim() == "")
@@ -50,6 +55,8 @@ namespace QuanLyCuaHangVTNN
                     this.Hide();
                     f.ShowDialog();
                     this.Show();
+                    txtMatKhau.Clear();
+                    txtTenDangNhap.Focus();
                 }
                 else
                 {
@@ -67,7 +74,7 @@ namespace QuanLyCuaHangVTNN
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult kq = MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo",
+            DialogResult kq = MessageBox.Show("Bạn có muốn thoát chương trình không?", "Xác nhận thoát",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
