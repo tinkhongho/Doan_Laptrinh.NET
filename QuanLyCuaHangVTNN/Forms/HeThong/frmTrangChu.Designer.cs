@@ -494,7 +494,7 @@ namespace QuanLyCuaHangVTNN
             this.pnlCard3.Controls.Add(this.pnlCard3Top);
             this.pnlCard3.Location = new System.Drawing.Point(626, 100);
             this.pnlCard3.Name = "pnlCard3";
-            this.pnlCard3.Size = new System.Drawing.Size(272, 428);
+            this.pnlCard3.Size = new System.Drawing.Size(272, 270);
             this.pnlCard3.TabIndex = 4;
             // 
             // btnCard3Open
@@ -553,7 +553,7 @@ namespace QuanLyCuaHangVTNN
             this.pnlCard2.Controls.Add(this.pnlCard2Top);
             this.pnlCard2.Location = new System.Drawing.Point(328, 100);
             this.pnlCard2.Name = "pnlCard2";
-            this.pnlCard2.Size = new System.Drawing.Size(272, 428);
+            this.pnlCard2.Size = new System.Drawing.Size(272, 270);
             this.pnlCard2.TabIndex = 3;
             // 
             // btnCard2Open
@@ -612,7 +612,7 @@ namespace QuanLyCuaHangVTNN
             this.pnlCard1.Controls.Add(this.pnlCard1Top);
             this.pnlCard1.Location = new System.Drawing.Point(30, 100);
             this.pnlCard1.Name = "pnlCard1";
-            this.pnlCard1.Size = new System.Drawing.Size(272, 428);
+            this.pnlCard1.Size = new System.Drawing.Size(272, 270);
             this.pnlCard1.TabIndex = 2;
             // 
             // btnCard1Open
