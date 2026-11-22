@@ -3,19 +3,19 @@ namespace QuanLyCuaHangVTNN
     partial class frmDangNhap
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Panel pnlLeftBrand;
-        private System.Windows.Forms.Label lblBrandTitle;
-        private System.Windows.Forms.Label lblBrandSub;
-        private System.Windows.Forms.Label lblBrandFooter;
-        private System.Windows.Forms.Panel pnlAccentTop;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblSubtitle;
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.Panel pnlKhungTrai;
+        private System.Windows.Forms.Label lblTenCuaHang;
+        private System.Windows.Forms.Label lblMoTaCuaHang;
+        private System.Windows.Forms.Label lblThongTinNhom;
+        private System.Windows.Forms.Panel pnlVienTren;
+        private System.Windows.Forms.Label lblTieuDeDangNhap;
+        private System.Windows.Forms.Label lblHuongDan;
+        private System.Windows.Forms.Label lblTenDangNhap;
+        private System.Windows.Forms.Label lblMatKhau;
         private System.Windows.Forms.TextBox txtTenDangNhap;
-        private System.Windows.Forms.Panel pnlLineUser;
+        private System.Windows.Forms.Panel pnlGachChanTen;
         private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.Panel pnlLinePass;
+        private System.Windows.Forms.Panel pnlGachChanMatKhau;
         private System.Windows.Forms.CheckBox chkHienMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
@@ -33,107 +33,107 @@ namespace QuanLyCuaHangVTNN
 
         private void InitializeComponent()
         {
-            this.pnlLeftBrand = new System.Windows.Forms.Panel();
-            this.lblBrandTitle = new System.Windows.Forms.Label();
-            this.lblBrandSub = new System.Windows.Forms.Label();
-            this.lblBrandFooter = new System.Windows.Forms.Label();
-            this.pnlAccentTop = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblSubtitle = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
+            this.pnlKhungTrai = new System.Windows.Forms.Panel();
+            this.lblThongTinNhom = new System.Windows.Forms.Label();
+            this.lblMoTaCuaHang = new System.Windows.Forms.Label();
+            this.lblTenCuaHang = new System.Windows.Forms.Label();
+            this.pnlVienTren = new System.Windows.Forms.Panel();
+            this.lblTieuDeDangNhap = new System.Windows.Forms.Label();
+            this.lblHuongDan = new System.Windows.Forms.Label();
+            this.lblTenDangNhap = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
-            this.pnlLineUser = new System.Windows.Forms.Panel();
-            this.lblPass = new System.Windows.Forms.Label();
+            this.pnlGachChanTen = new System.Windows.Forms.Panel();
+            this.lblMatKhau = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.pnlLinePass = new System.Windows.Forms.Panel();
+            this.pnlGachChanMatKhau = new System.Windows.Forms.Panel();
             this.chkHienMatKhau = new System.Windows.Forms.CheckBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.pnlLeftBrand.SuspendLayout();
+            this.pnlKhungTrai.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlLeftBrand
+            // pnlKhungTrai
             // 
-            this.pnlLeftBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
-            this.pnlLeftBrand.Controls.Add(this.lblBrandFooter);
-            this.pnlLeftBrand.Controls.Add(this.lblBrandSub);
-            this.pnlLeftBrand.Controls.Add(this.lblBrandTitle);
-            this.pnlLeftBrand.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeftBrand.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeftBrand.Name = "pnlLeftBrand";
-            this.pnlLeftBrand.Size = new System.Drawing.Size(275, 420);
-            this.pnlLeftBrand.TabIndex = 0;
+            this.pnlKhungTrai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
+            this.pnlKhungTrai.Controls.Add(this.lblThongTinNhom);
+            this.pnlKhungTrai.Controls.Add(this.lblMoTaCuaHang);
+            this.pnlKhungTrai.Controls.Add(this.lblTenCuaHang);
+            this.pnlKhungTrai.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlKhungTrai.Location = new System.Drawing.Point(0, 0);
+            this.pnlKhungTrai.Name = "pnlKhungTrai";
+            this.pnlKhungTrai.Size = new System.Drawing.Size(275, 420);
+            this.pnlKhungTrai.TabIndex = 0;
             // 
-            // lblBrandTitle
+            // lblTenCuaHang
             // 
-            this.lblBrandTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblBrandTitle.ForeColor = System.Drawing.Color.White;
-            this.lblBrandTitle.Location = new System.Drawing.Point(24, 95);
-            this.lblBrandTitle.Name = "lblBrandTitle";
-            this.lblBrandTitle.Size = new System.Drawing.Size(230, 75);
-            this.lblBrandTitle.TabIndex = 0;
-            this.lblBrandTitle.Text = "CỬA HÀNG\r\nVẬT TƯ NÔNG NGHIỆP";
+            this.lblTenCuaHang.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTenCuaHang.ForeColor = System.Drawing.Color.White;
+            this.lblTenCuaHang.Location = new System.Drawing.Point(24, 95);
+            this.lblTenCuaHang.Name = "lblTenCuaHang";
+            this.lblTenCuaHang.Size = new System.Drawing.Size(230, 75);
+            this.lblTenCuaHang.TabIndex = 0;
+            this.lblTenCuaHang.Text = "CỬA HÀNG\r\nVẬT TƯ NÔNG NGHIỆP";
             // 
-            // lblBrandSub
+            // lblMoTaCuaHang
             // 
-            this.lblBrandSub.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblBrandSub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
-            this.lblBrandSub.Location = new System.Drawing.Point(26, 180);
-            this.lblBrandSub.Name = "lblBrandSub";
-            this.lblBrandSub.Size = new System.Drawing.Size(225, 70);
-            this.lblBrandSub.TabIndex = 1;
-            this.lblBrandSub.Text = "Hệ thống quản lý Hàng hóa,\r\nDoanh thu & Công nợ mùa vụ.";
+            this.lblMoTaCuaHang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblMoTaCuaHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
+            this.lblMoTaCuaHang.Location = new System.Drawing.Point(26, 180);
+            this.lblMoTaCuaHang.Name = "lblMoTaCuaHang";
+            this.lblMoTaCuaHang.Size = new System.Drawing.Size(225, 70);
+            this.lblMoTaCuaHang.TabIndex = 1;
+            this.lblMoTaCuaHang.Text = "Hệ thống quản lý Hàng hóa,\r\nDoanh thu và Công nợ mùa vụ.";
             // 
-            // lblBrandFooter
+            // lblThongTinNhom
             // 
-            this.lblBrandFooter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.lblBrandFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(214)))), ((int)(((byte)(167)))));
-            this.lblBrandFooter.Location = new System.Drawing.Point(26, 375);
-            this.lblBrandFooter.Name = "lblBrandFooter";
-            this.lblBrandFooter.Size = new System.Drawing.Size(230, 25);
-            this.lblBrandFooter.TabIndex = 2;
-            this.lblBrandFooter.Text = "Đồ án Lập trình .NET (Tín - Tân - Thiện)";
+            this.lblThongTinNhom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.lblThongTinNhom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(214)))), ((int)(((byte)(167)))));
+            this.lblThongTinNhom.Location = new System.Drawing.Point(26, 375);
+            this.lblThongTinNhom.Name = "lblThongTinNhom";
+            this.lblThongTinNhom.Size = new System.Drawing.Size(230, 25);
+            this.lblThongTinNhom.TabIndex = 2;
+            this.lblThongTinNhom.Text = "Đồ án Lập trình .NET (Tín - Tân - Thiện)";
             // 
-            // pnlAccentTop
+            // pnlVienTren
             // 
-            this.pnlAccentTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
-            this.pnlAccentTop.Location = new System.Drawing.Point(275, 0);
-            this.pnlAccentTop.Name = "pnlAccentTop";
-            this.pnlAccentTop.Size = new System.Drawing.Size(455, 6);
-            this.pnlAccentTop.TabIndex = 1;
+            this.pnlVienTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
+            this.pnlVienTren.Location = new System.Drawing.Point(275, 0);
+            this.pnlVienTren.Name = "pnlVienTren";
+            this.pnlVienTren.Size = new System.Drawing.Size(455, 6);
+            this.pnlVienTren.TabIndex = 1;
             // 
-            // lblTitle
+            // lblTieuDeDangNhap
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
-            this.lblTitle.Location = new System.Drawing.Point(320, 42);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(265, 31);
-            this.lblTitle.TabIndex = 2;
-            this.lblTitle.Text = "ĐĂNG NHẬP HỆ THỐNG";
+            this.lblTieuDeDangNhap.AutoSize = true;
+            this.lblTieuDeDangNhap.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold);
+            this.lblTieuDeDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
+            this.lblTieuDeDangNhap.Location = new System.Drawing.Point(320, 42);
+            this.lblTieuDeDangNhap.Name = "lblTieuDeDangNhap";
+            this.lblTieuDeDangNhap.Size = new System.Drawing.Size(265, 31);
+            this.lblTieuDeDangNhap.TabIndex = 2;
+            this.lblTieuDeDangNhap.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
-            // lblSubtitle
+            // lblHuongDan
             // 
-            this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.lblSubtitle.Location = new System.Drawing.Point(323, 76);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(295, 17);
-            this.lblSubtitle.TabIndex = 3;
-            this.lblSubtitle.Text = "Vui lòng đăng nhập tài khoản Quản lý hoặc Nhân viên";
+            this.lblHuongDan.AutoSize = true;
+            this.lblHuongDan.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblHuongDan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.lblHuongDan.Location = new System.Drawing.Point(323, 76);
+            this.lblHuongDan.Name = "lblHuongDan";
+            this.lblHuongDan.Size = new System.Drawing.Size(295, 17);
+            this.lblHuongDan.TabIndex = 3;
+            this.lblHuongDan.Text = "Vui lòng đăng nhập tài khoản Quản lý hoặc Nhân viên";
             // 
-            // lblUser
+            // lblTenDangNhap
             // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblUser.Location = new System.Drawing.Point(322, 122);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(107, 19);
-            this.lblUser.TabIndex = 4;
-            this.lblUser.Text = "Tên đăng nhập";
+            this.lblTenDangNhap.AutoSize = true;
+            this.lblTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.lblTenDangNhap.Location = new System.Drawing.Point(322, 122);
+            this.lblTenDangNhap.Name = "lblTenDangNhap";
+            this.lblTenDangNhap.Size = new System.Drawing.Size(107, 19);
+            this.lblTenDangNhap.TabIndex = 4;
+            this.lblTenDangNhap.Text = "Tên đăng nhập";
             // 
             // txtTenDangNhap
             // 
@@ -144,24 +144,24 @@ namespace QuanLyCuaHangVTNN
             this.txtTenDangNhap.Size = new System.Drawing.Size(345, 27);
             this.txtTenDangNhap.TabIndex = 5;
             // 
-            // pnlLineUser
+            // pnlGachChanTen
             // 
-            this.pnlLineUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            this.pnlLineUser.Location = new System.Drawing.Point(325, 173);
-            this.pnlLineUser.Name = "pnlLineUser";
-            this.pnlLineUser.Size = new System.Drawing.Size(345, 2);
-            this.pnlLineUser.TabIndex = 6;
+            this.pnlGachChanTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.pnlGachChanTen.Location = new System.Drawing.Point(325, 173);
+            this.pnlGachChanTen.Name = "pnlGachChanTen";
+            this.pnlGachChanTen.Size = new System.Drawing.Size(345, 2);
+            this.pnlGachChanTen.TabIndex = 6;
             // 
-            // lblPass
+            // lblMatKhau
             // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblPass.Location = new System.Drawing.Point(322, 198);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(70, 19);
-            this.lblPass.TabIndex = 7;
-            this.lblPass.Text = "Mật khẩu";
+            this.lblMatKhau.AutoSize = true;
+            this.lblMatKhau.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.lblMatKhau.Location = new System.Drawing.Point(322, 198);
+            this.lblMatKhau.Name = "lblMatKhau";
+            this.lblMatKhau.Size = new System.Drawing.Size(70, 19);
+            this.lblMatKhau.TabIndex = 7;
+            this.lblMatKhau.Text = "Mật khẩu";
             // 
             // txtMatKhau
             // 
@@ -173,13 +173,13 @@ namespace QuanLyCuaHangVTNN
             this.txtMatKhau.TabIndex = 8;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
-            // pnlLinePass
+            // pnlGachChanMatKhau
             // 
-            this.pnlLinePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            this.pnlLinePass.Location = new System.Drawing.Point(325, 249);
-            this.pnlLinePass.Name = "pnlLinePass";
-            this.pnlLinePass.Size = new System.Drawing.Size(345, 2);
-            this.pnlLinePass.TabIndex = 9;
+            this.pnlGachChanMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.pnlGachChanMatKhau.Location = new System.Drawing.Point(325, 249);
+            this.pnlGachChanMatKhau.Name = "pnlGachChanMatKhau";
+            this.pnlGachChanMatKhau.Size = new System.Drawing.Size(345, 2);
+            this.pnlGachChanMatKhau.TabIndex = 9;
             // 
             // chkHienMatKhau
             // 
@@ -238,16 +238,16 @@ namespace QuanLyCuaHangVTNN
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.chkHienMatKhau);
-            this.Controls.Add(this.pnlLinePass);
+            this.Controls.Add(this.pnlGachChanMatKhau);
             this.Controls.Add(this.txtMatKhau);
-            this.Controls.Add(this.lblPass);
-            this.Controls.Add(this.pnlLineUser);
+            this.Controls.Add(this.lblMatKhau);
+            this.Controls.Add(this.pnlGachChanTen);
             this.Controls.Add(this.txtTenDangNhap);
-            this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.lblSubtitle);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.pnlAccentTop);
-            this.Controls.Add(this.pnlLeftBrand);
+            this.Controls.Add(this.lblTenDangNhap);
+            this.Controls.Add(this.lblHuongDan);
+            this.Controls.Add(this.lblTieuDeDangNhap);
+            this.Controls.Add(this.pnlVienTren);
+            this.Controls.Add(this.pnlKhungTrai);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -255,7 +255,7 @@ namespace QuanLyCuaHangVTNN
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập - Quản lý Cửa hàng Vật tư Nông nghiệp";
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
-            this.pnlLeftBrand.ResumeLayout(false);
+            this.pnlKhungTrai.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
