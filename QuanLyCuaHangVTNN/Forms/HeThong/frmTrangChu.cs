@@ -57,7 +57,7 @@ namespace QuanLyCuaHangVTNN
                     decimal thucThuBan = Convert.ToDecimal(drDT[2]);
 
                     lblSoDoanhThu.Text = string.Format("{0:N0} đ", tongDoanhThu);
-                    lblGhiChuDoanhThu.Text = string.Format("Từ {0} hóa đơn  |  Thu ngay: {1:N0} đ", soHD, thucThuBan);
+                    lblGhiChuDoanhThu.Text = string.Format("{0} hóa đơn | Thu: {1:N0} đ", soHD, thucThuBan);
                 }
                 drDT.Close();
 
@@ -71,7 +71,7 @@ namespace QuanLyCuaHangVTNN
                 decimal tienThuNo = Convert.ToDecimal(cmdThuNo.ExecuteScalar());
 
                 lblSoLoiNhuan.Text = string.Format("{0:N0} đ", loiNhuanGop);
-                lblGhiChuLoiNhuan.Text = string.Format("Đã thu hồi nợ khách: {0:N0} đ", tienThuNo);
+                lblGhiChuLoiNhuan.Text = string.Format("Thu nợ khách: {0:N0} đ", tienThuNo);
 
                 // 3. Thống kê Tổng Công nợ Khách hàng (Phải thu)
                 SqlCommand cmdCongNoKH = new SqlCommand(
@@ -82,7 +82,7 @@ namespace QuanLyCuaHangVTNN
                     int soKhachNo = Convert.ToInt32(drKH[0]);
                     decimal tongNoKhach = Convert.ToDecimal(drKH[1]);
                     lblSoCongNoKhach.Text = string.Format("{0:N0} đ", tongNoKhach);
-                    lblGhiChuCongNoKhach.Text = string.Format("Hiện có {0} khách hàng đang nợ", soKhachNo);
+                    lblGhiChuCongNoKhach.Text = string.Format("Hiện có {0} khách đang nợ", soKhachNo);
                 }
                 drKH.Close();
 
@@ -99,7 +99,7 @@ namespace QuanLyCuaHangVTNN
                     int soMatHang = Convert.ToInt32(drHH[0]);
                     int tongTon = Convert.ToInt32(drHH[1]);
                     lblSoTonKho.Text = string.Format("{0:N0} đ", tongNoNCC);
-                    lblGhiChuTonKho.Text = string.Format("Kho: {0} mặt hàng ({1:N0} đơn vị tồn)", soMatHang, tongTon);
+                    lblGhiChuTonKho.Text = string.Format("Kho: {0} mặt hàng ({1:N0} SP)", soMatHang, tongTon);
                 }
                 drHH.Close();
 
@@ -116,14 +116,25 @@ namespace QuanLyCuaHangVTNN
                 if (dgvHoaDonGanDay.Columns.Count > 0)
                 {
                     dgvHoaDonGanDay.Columns["mahd"].HeaderText = "Mã HĐ";
-                    dgvHoaDonGanDay.Columns["ngayban"].HeaderText = "Ngày bán";
-                    dgvHoaDonGanDay.Columns["tenkh"].HeaderText = "Khách hàng";
-                    dgvHoaDonGanDay.Columns["tongtien"].HeaderText = "Tổng tiền";
-                    dgvHoaDonGanDay.Columns["dathanhtoan"].HeaderText = "Đã thu";
-                    dgvHoaDonGanDay.Columns["conno"].HeaderText = "Còn nợ";
+                    dgvHoaDonGanDay.Columns["mahd"].FillWeight = 62;
 
+                    dgvHoaDonGanDay.Columns["ngayban"].HeaderText = "Ngày bán";
+                    dgvHoaDonGanDay.Columns["ngayban"].FillWeight = 82;
+                    dgvHoaDonGanDay.Columns["ngayban"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+                    dgvHoaDonGanDay.Columns["tenkh"].HeaderText = "Khách hàng";
+                    dgvHoaDonGanDay.Columns["tenkh"].FillWeight = 135;
+
+                    dgvHoaDonGanDay.Columns["tongtien"].HeaderText = "Tổng tiền";
+                    dgvHoaDonGanDay.Columns["tongtien"].FillWeight = 88;
                     dgvHoaDonGanDay.Columns["tongtien"].DefaultCellStyle.Format = "N0";
+
+                    dgvHoaDonGanDay.Columns["dathanhtoan"].HeaderText = "Đã thu";
+                    dgvHoaDonGanDay.Columns["dathanhtoan"].FillWeight = 85;
                     dgvHoaDonGanDay.Columns["dathanhtoan"].DefaultCellStyle.Format = "N0";
+
+                    dgvHoaDonGanDay.Columns["conno"].HeaderText = "Còn nợ";
+                    dgvHoaDonGanDay.Columns["conno"].FillWeight = 85;
                     dgvHoaDonGanDay.Columns["conno"].DefaultCellStyle.Format = "N0";
                 }
 
@@ -139,13 +150,21 @@ namespace QuanLyCuaHangVTNN
 
                 if (dgvKhachHangDangNo.Columns.Count > 0)
                 {
-                    dgvKhachHangDangNo.Columns["makh"].HeaderText = "Mã KH";
-                    dgvKhachHangDangNo.Columns["tenkh"].HeaderText = "Tên khách hàng";
-                    dgvKhachHangDangNo.Columns["sdt"].HeaderText = "SĐT";
-                    dgvKhachHangDangNo.Columns["sonohientai"].HeaderText = "Đang nợ";
-                    dgvKhachHangDangNo.Columns["hanmucno"].HeaderText = "Hạn mức nợ";
+                    dgvKhachHangDangNo.Columns["makh"].HeaderText = "Mã";
+                    dgvKhachHangDangNo.Columns["makh"].FillWeight = 48;
 
+                    dgvKhachHangDangNo.Columns["tenkh"].HeaderText = "Khách hàng";
+                    dgvKhachHangDangNo.Columns["tenkh"].FillWeight = 135;
+
+                    dgvKhachHangDangNo.Columns["sdt"].HeaderText = "SĐT";
+                    dgvKhachHangDangNo.Columns["sdt"].FillWeight = 90;
+
+                    dgvKhachHangDangNo.Columns["sonohientai"].HeaderText = "Đang nợ";
+                    dgvKhachHangDangNo.Columns["sonohientai"].FillWeight = 88;
                     dgvKhachHangDangNo.Columns["sonohientai"].DefaultCellStyle.Format = "N0";
+
+                    dgvKhachHangDangNo.Columns["hanmucno"].HeaderText = "Hạn mức";
+                    dgvKhachHangDangNo.Columns["hanmucno"].FillWeight = 88;
                     dgvKhachHangDangNo.Columns["hanmucno"].DefaultCellStyle.Format = "N0";
                 }
             }

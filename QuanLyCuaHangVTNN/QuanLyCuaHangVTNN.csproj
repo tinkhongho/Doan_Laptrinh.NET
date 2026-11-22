@@ -170,6 +170,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\hero_nonghuu.png" />
+    <None Include="Images\nav_bg.png" />
     <None Include="Images\reloadbutton.png" />
     <None Include="App.config" />
     <Content Include="Database\QLVTNN.sql" />

@@ -63,6 +63,26 @@ namespace QuanLyCuaHangVTNN.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hero_nonghuu {
+            get {
+                object obj = ResourceManager.GetObject("hero_nonghuu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nav_bg {
+            get {
+                object obj = ResourceManager.GetObject("nav_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reloadbutton {
             get {
                 object obj = ResourceManager.GetObject("reloadbutton", resourceCulture);
