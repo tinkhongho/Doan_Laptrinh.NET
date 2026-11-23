@@ -179,6 +179,16 @@ namespace QuanLyCuaHangVTNN
             NapThongKeTrangChu();
         }
 
+        private void btnThayDoiPanel_Click(object sender, EventArgs e)
+        {
+            bool dangHienHoaDon = pnlKhungHoaDonGanDay.Visible;
+
+            pnlKhungHoaDonGanDay.Visible = !dangHienHoaDon;
+            lblTieuDeBangHoaDon.Visible = !dangHienHoaDon;
+            pnlKhungKhachHangNo.Visible = dangHienHoaDon;
+            lblTieuDeBangCongNo.Visible = dangHienHoaDon;
+        }
+
         /// <summary>
         /// Đổi màu nút đang được chọn trên thanh Menu bên trái
         /// </summary>
@@ -186,7 +196,7 @@ namespace QuanLyCuaHangVTNN
         {
             if (nutDangChon != null)
             {
-                nutDangChon.BackColor = Color.FromArgb(27, 94, 32);
+                nutDangChon.BackColor = Color.FromArgb(0);
                 nutDangChon.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular);
             }
 
