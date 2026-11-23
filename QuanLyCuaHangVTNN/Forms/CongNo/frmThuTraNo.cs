@@ -244,7 +244,6 @@ namespace QuanLyCuaHangVTNN
                 txtGhiChu.Text = Convert.ToString(drv["ghichu"]);
             }
             dangLoadDuLieu = false;
-
             CapNhatNoHienTai();
             txtNoConLai.Text = noHienTai.ToString("N0");
         }

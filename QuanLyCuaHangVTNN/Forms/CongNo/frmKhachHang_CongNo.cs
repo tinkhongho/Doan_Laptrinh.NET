@@ -284,7 +284,6 @@ namespace QuanLyCuaHangVTNN
                 MessageBox.Show("Lỗi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string maKH = txtMaKH.Text.Trim();

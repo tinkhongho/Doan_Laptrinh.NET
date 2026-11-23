@@ -324,7 +324,6 @@ namespace QuanLyCuaHangVTNN
                 MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             trangThai = "";
