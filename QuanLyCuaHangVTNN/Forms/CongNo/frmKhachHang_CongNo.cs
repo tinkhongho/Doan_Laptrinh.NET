@@ -9,34 +9,12 @@ namespace QuanLyCuaHangVTNN
     public partial class frmKhachHang_CongNo : Form
     {
         private string trangThai = "";
+
         public frmKhachHang_CongNo()
         {
             InitializeComponent();
         }
-        private void GanSuKien()
-        {
-            this.Load += frmKhachHang_CongNo_Load;
-            btnThem.Click += btnThem_Click;
-            btnSua.Click += btnSua_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnHuy.Click += btnHuy_Click;
-            btnThoat.Click += (s, e) => this.Close();
 
-            btnTimKiem.Click += (s, e) => LoadDanhSach();
-            btnLamMoi.Click += btnLamMoi_Click;
-            chkChiHienThiDangNo.CheckedChanged += (s, e) => LoadDanhSach();
-            txtTimKiem.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    LoadDanhSach();
-                    e.SuppressKeyPress = true;
-                }
-            };
-
-            dgvKhachHang.CellClick += dgvKhachHang_CellClick;
-        }
         private void frmKhachHang_CongNo_Load(object sender, EventArgs e)
         {
             dgvKhachHang.AutoGenerateColumns = false;
@@ -48,6 +26,7 @@ namespace QuanLyCuaHangVTNN
             SetTrangThai(false);
             LoadDanhSach();
         }
+
         private void SetTrangThai(bool dangNhapLieu)
         {
             txtMaKH.Enabled = (trangThai == "THEM");
@@ -119,13 +98,9 @@ namespace QuanLyCuaHangVTNN
                     lblTongCongNo.Text = string.Format("Tổng công nợ phải thu: {0:N0} đ", tongNo);
 
                     if (dgvKhachHang.Rows.Count > 0)
-                    {
                         HienThiDongDangChon(0);
-                    }
                     else
-                    {
                         XoaTrangInput();
-                    }
                 }
             }
             catch (Exception ex)
@@ -150,6 +125,7 @@ namespace QuanLyCuaHangVTNN
             txtHanMucNo.Text = hanMuc.ToString("0");
             txtSoNoHienTai.Text = soNo.ToString("N0");
         }
+
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -284,6 +260,7 @@ namespace QuanLyCuaHangVTNN
                 MessageBox.Show("Lỗi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string maKH = txtMaKH.Text.Trim();
@@ -303,7 +280,6 @@ namespace QuanLyCuaHangVTNN
                 {
                     KetNoiDB.MoKetNoi(cn);
 
-                    // Kiểm tra còn nợ không
                     SqlCommand cmdNo = new SqlCommand("SELECT sonohientai FROM khachhang WHERE makh = @makh", cn);
                     cmdNo.Parameters.AddWithValue("@makh", maKH);
                     decimal soNo = Convert.ToDecimal(cmdNo.ExecuteScalar() ?? 0);
@@ -313,7 +289,6 @@ namespace QuanLyCuaHangVTNN
                         return;
                     }
 
-                    // Kiểm tra ràng buộc khóa ngoại ở hóa đơn & phiếu thu nợ
                     SqlCommand cmdRef = new SqlCommand(
                         "SELECT (SELECT COUNT(*) FROM hoadon WHERE makh = @makh) + (SELECT COUNT(*) FROM phieuthutrano WHERE makh = @makh)", cn);
                     cmdRef.Parameters.AddWithValue("@makh", maKH);
@@ -348,11 +323,35 @@ namespace QuanLyCuaHangVTNN
                 XoaTrangInput();
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
+
+        private void chkChiHienThiDangNo_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
+
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtTimKiem.Clear();
             chkChiHienThiDangNo.Checked = false;
             LoadDanhSach();
+        }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoadDanhSach();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

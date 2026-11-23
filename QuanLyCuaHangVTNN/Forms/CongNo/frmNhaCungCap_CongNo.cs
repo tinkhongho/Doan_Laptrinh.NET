@@ -7,37 +7,11 @@ namespace QuanLyCuaHangVTNN
 {
     public partial class frmNhaCungCap_CongNo : Form
     {
-        private string trangThai = ""; // "THEM", "SUA", hoặc ""
+        private string trangThai = "";
 
         public frmNhaCungCap_CongNo()
         {
             InitializeComponent();
-            GanSuKien();
-        }
-
-        private void GanSuKien()
-        {
-            this.Load += frmNhaCungCap_CongNo_Load;
-            btnThem.Click += btnThem_Click;
-            btnSua.Click += btnSua_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnHuy.Click += btnHuy_Click;
-            btnThoat.Click += (s, e) => this.Close();
-
-            btnTimKiem.Click += (s, e) => LoadDanhSach();
-            btnLamMoi.Click += btnLamMoi_Click;
-            chkChiHienThiConNo.CheckedChanged += (s, e) => LoadDanhSach();
-            txtTimKiem.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    LoadDanhSach();
-                    e.SuppressKeyPress = true;
-                }
-            };
-
-            dgvNhaCungCap.CellClick += dgvNhaCungCap_CellClick;
         }
 
         private void frmNhaCungCap_CongNo_Load(object sender, EventArgs e)
@@ -119,13 +93,9 @@ namespace QuanLyCuaHangVTNN
                     lblTongCongNoNCC.Text = string.Format("Tổng nợ phải trả NCC: {0:N0} đ", tongNo);
 
                     if (dgvNhaCungCap.Rows.Count > 0)
-                    {
                         HienThiDongDangChon(0);
-                    }
                     else
-                    {
                         XoaTrangInput();
-                    }
                 }
             }
             catch (Exception ex)
@@ -324,6 +294,7 @@ namespace QuanLyCuaHangVTNN
                 MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             trangThai = "";
@@ -334,11 +305,35 @@ namespace QuanLyCuaHangVTNN
                 XoaTrangInput();
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
+
+        private void chkChiHienThiConNo_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
+        }
+
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtTimKiem.Clear();
             chkChiHienThiConNo.Checked = false;
             LoadDanhSach();
+        }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoadDanhSach();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

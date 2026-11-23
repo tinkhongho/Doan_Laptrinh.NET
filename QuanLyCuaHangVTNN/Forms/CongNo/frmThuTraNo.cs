@@ -17,41 +17,6 @@ namespace QuanLyCuaHangVTNN
         public frmThuTraNo()
         {
             InitializeComponent();
-            GanSuKien();
-        }
-
-        private void GanSuKien()
-        {
-            this.Load += frmThuTraNo_Load;
-
-            radThuNoKhach.CheckedChanged += LoaiPhieu_CheckedChanged;
-            radTraNoNCC.CheckedChanged += LoaiPhieu_CheckedChanged;
-            cboKhachHang.SelectedIndexChanged += DoiTuong_SelectedIndexChanged;
-            cboNhaCungCap.SelectedIndexChanged += DoiTuong_SelectedIndexChanged;
-            txtSoTien.TextChanged += txtSoTien_TextChanged;
-
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnHuy.Click += btnHuy_Click;
-            btnThoat.Click += (s, e) => this.Close();
-
-            cboLocLoaiPhieu.SelectedIndexChanged += (s, e) =>
-            {
-                if (!dangLoadDuLieu) LoadDanhSachPhieu();
-            };
-            btnTimKiem.Click += (s, e) => LoadDanhSachPhieu();
-            btnLamMoi.Click += btnLamMoi_Click;
-            txtTimKiem.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    LoadDanhSachPhieu();
-                    e.SuppressKeyPress = true;
-                }
-            };
-
-            dgvPhieuThuTraNo.CellClick += dgvPhieuThuTraNo_CellClick;
         }
 
         private void frmThuTraNo_Load(object sender, EventArgs e)
@@ -244,6 +209,7 @@ namespace QuanLyCuaHangVTNN
                 txtGhiChu.Text = Convert.ToString(drv["ghichu"]);
             }
             dangLoadDuLieu = false;
+
             CapNhatNoHienTai();
             txtNoConLai.Text = noHienTai.ToString("N0");
         }
@@ -254,32 +220,46 @@ namespace QuanLyCuaHangVTNN
                 HienThiDongDangChon(e.RowIndex);
         }
 
-        private void LoaiPhieu_CheckedChanged(object sender, EventArgs e)
+        private void XuLyDoiLoaiPhieu()
         {
-            if (dangLoadDuLieu) return;
+            if (dangLoadDuLieu || !dangTaoMoi) return;
 
-            if (dangTaoMoi)
+            cboKhachHang.Enabled = radThuNoKhach.Checked;
+            cboNhaCungCap.Enabled = radTraNoNCC.Checked;
+
+            if (radThuNoKhach.Checked)
             {
-                cboKhachHang.Enabled = radThuNoKhach.Checked;
-                cboNhaCungCap.Enabled = radTraNoNCC.Checked;
-
-                if (radThuNoKhach.Checked)
-                {
-                    cboNhaCungCap.SelectedIndex = -1;
-                    txtMaPhieu.Text = TaoMaPhieuMoi("PT");
-                }
-                else
-                {
-                    cboKhachHang.SelectedIndex = -1;
-                    txtMaPhieu.Text = TaoMaPhieuMoi("PC");
-                }
-
-                CapNhatNoHienTai();
-                TinhNoConLai();
+                cboNhaCungCap.SelectedIndex = -1;
+                txtMaPhieu.Text = TaoMaPhieuMoi("PT");
             }
+            else
+            {
+                cboKhachHang.SelectedIndex = -1;
+                txtMaPhieu.Text = TaoMaPhieuMoi("PC");
+            }
+
+            CapNhatNoHienTai();
+            TinhNoConLai();
         }
 
-        private void DoiTuong_SelectedIndexChanged(object sender, EventArgs e)
+        private void radThuNoKhach_CheckedChanged(object sender, EventArgs e)
+        {
+            XuLyDoiLoaiPhieu();
+        }
+
+        private void radTraNoNCC_CheckedChanged(object sender, EventArgs e)
+        {
+            XuLyDoiLoaiPhieu();
+        }
+
+        private void cboKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dangLoadDuLieu) return;
+            CapNhatNoHienTai();
+            if (dangTaoMoi) TinhNoConLai();
+        }
+
+        private void cboNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dangLoadDuLieu) return;
             CapNhatNoHienTai();
@@ -419,7 +399,6 @@ namespace QuanLyCuaHangVTNN
                 {
                     KetNoiDB.MoKetNoi(cn);
 
-                    // Kiểm tra trùng mã phiếu
                     SqlCommand cmdCheck = new SqlCommand("SELECT COUNT(*) FROM phieuthutrano WHERE maphieu = @maphieu", cn);
                     cmdCheck.Parameters.AddWithValue("@maphieu", maPhieu);
                     if ((int)cmdCheck.ExecuteScalar() > 0)
@@ -433,7 +412,6 @@ namespace QuanLyCuaHangVTNN
                     {
                         try
                         {
-                            // 1. Lưu phiếu thu/trả nợ
                             string sqlInsert = @"INSERT INTO phieuthutrano (maphieu, ngaylap, loaiphieu, makh, mancc, sotien, ghichu)
                                                  VALUES (@maphieu, @ngaylap, @loaiphieu, @makh, @mancc, @sotien, @ghichu)";
                             SqlCommand cmdIns = new SqlCommand(sqlInsert, cn, tran);
@@ -446,7 +424,6 @@ namespace QuanLyCuaHangVTNN
                             cmdIns.Parameters.AddWithValue("@ghichu", ghiChu);
                             cmdIns.ExecuteNonQuery();
 
-                            // 2. Giảm công nợ tương ứng
                             if (radThuNoKhach.Checked)
                             {
                                 SqlCommand cmdUpd = new SqlCommand(
@@ -521,12 +498,10 @@ namespace QuanLyCuaHangVTNN
                     {
                         try
                         {
-                            // 1. Xóa phiếu
                             SqlCommand cmdDel = new SqlCommand("DELETE FROM phieuthutrano WHERE maphieu = @maphieu", cn, tran);
                             cmdDel.Parameters.AddWithValue("@maphieu", maPhieu);
                             cmdDel.ExecuteNonQuery();
 
-                            // 2. Hoàn lại công nợ tương ứng
                             if (loaiPhieu == "Thu nợ khách" && !string.IsNullOrEmpty(maKH))
                             {
                                 SqlCommand cmdUpd = new SqlCommand(
@@ -578,6 +553,22 @@ namespace QuanLyCuaHangVTNN
                 XoaTrangInput();
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cboLocLoaiPhieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!dangLoadDuLieu)
+                LoadDanhSachPhieu();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadDanhSachPhieu();
+        }
+
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             dangLoadDuLieu = true;
@@ -588,6 +579,15 @@ namespace QuanLyCuaHangVTNN
             dangLoadDuLieu = false;
 
             LoadDanhSachPhieu();
+        }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoadDanhSachPhieu();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

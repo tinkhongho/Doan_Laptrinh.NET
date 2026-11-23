@@ -17,8 +17,8 @@ namespace QuanLyCuaHangVTNN
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlThongTin = new System.Windows.Forms.Panel();
             this.pnlVienTren = new System.Windows.Forms.Panel();
             this.lblTieuDeThongTin = new System.Windows.Forms.Label();
@@ -183,6 +183,7 @@ namespace QuanLyCuaHangVTNN
             this.radThuNoKhach.TabStop = true;
             this.radThuNoKhach.Text = "Thu nợ khách";
             this.radThuNoKhach.UseVisualStyleBackColor = true;
+            this.radThuNoKhach.CheckedChanged += new System.EventHandler(this.radThuNoKhach_CheckedChanged);
             // 
             // radTraNoNCC
             // 
@@ -196,6 +197,7 @@ namespace QuanLyCuaHangVTNN
             this.radTraNoNCC.TabIndex = 8;
             this.radTraNoNCC.Text = "Trả nợ NCC";
             this.radTraNoNCC.UseVisualStyleBackColor = true;
+            this.radTraNoNCC.CheckedChanged += new System.EventHandler(this.radTraNoNCC_CheckedChanged);
             // 
             // lblKhachHang
             // 
@@ -215,6 +217,7 @@ namespace QuanLyCuaHangVTNN
             this.cboKhachHang.Name = "cboKhachHang";
             this.cboKhachHang.Size = new System.Drawing.Size(220, 29);
             this.cboKhachHang.TabIndex = 10;
+            this.cboKhachHang.SelectedIndexChanged += new System.EventHandler(this.cboKhachHang_SelectedIndexChanged);
             // 
             // lblNhaCungCap
             // 
@@ -235,6 +238,7 @@ namespace QuanLyCuaHangVTNN
             this.cboNhaCungCap.Name = "cboNhaCungCap";
             this.cboNhaCungCap.Size = new System.Drawing.Size(192, 29);
             this.cboNhaCungCap.TabIndex = 12;
+            this.cboNhaCungCap.SelectedIndexChanged += new System.EventHandler(this.cboNhaCungCap_SelectedIndexChanged);
             // 
             // lblNoHienTai
             // 
@@ -277,6 +281,7 @@ namespace QuanLyCuaHangVTNN
             this.txtSoTien.Size = new System.Drawing.Size(140, 29);
             this.txtSoTien.TabIndex = 16;
             this.txtSoTien.Text = "0";
+            this.txtSoTien.TextChanged += new System.EventHandler(this.txtSoTien_TextChanged);
             // 
             // lblNoConLai
             // 
@@ -332,6 +337,7 @@ namespace QuanLyCuaHangVTNN
             this.btnThem.TabIndex = 21;
             this.btnThem.Text = "Tạo phiếu";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnLuu
             // 
@@ -347,6 +353,7 @@ namespace QuanLyCuaHangVTNN
             this.btnLuu.TabIndex = 22;
             this.btnLuu.Text = "Lưu phiếu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -362,6 +369,7 @@ namespace QuanLyCuaHangVTNN
             this.btnXoa.TabIndex = 23;
             this.btnXoa.Text = "Xóa phiếu";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHuy
             // 
@@ -377,6 +385,7 @@ namespace QuanLyCuaHangVTNN
             this.btnHuy.TabIndex = 24;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThoat
             // 
@@ -392,6 +401,7 @@ namespace QuanLyCuaHangVTNN
             this.btnThoat.TabIndex = 25;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // pnlDanhSach
             // 
@@ -445,6 +455,7 @@ namespace QuanLyCuaHangVTNN
             this.cboLocLoaiPhieu.Name = "cboLocLoaiPhieu";
             this.cboLocLoaiPhieu.Size = new System.Drawing.Size(150, 29);
             this.cboLocLoaiPhieu.TabIndex = 2;
+            this.cboLocLoaiPhieu.SelectedIndexChanged += new System.EventHandler(this.cboLocLoaiPhieu_SelectedIndexChanged);
             // 
             // lblTimKiem
             // 
@@ -477,6 +488,7 @@ namespace QuanLyCuaHangVTNN
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLamMoi
             // 
@@ -492,6 +504,7 @@ namespace QuanLyCuaHangVTNN
             this.btnLamMoi.TabIndex = 6;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // dgvPhieuThuTraNo
             // 
@@ -503,14 +516,14 @@ namespace QuanLyCuaHangVTNN
             this.dgvPhieuThuTraNo.BackgroundColor = System.Drawing.Color.White;
             this.dgvPhieuThuTraNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPhieuThuTraNo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhieuThuTraNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuThuTraNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPhieuThuTraNo.ColumnHeadersHeight = 35;
             this.dgvPhieuThuTraNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPhieuThuTraNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -520,14 +533,14 @@ namespace QuanLyCuaHangVTNN
             this.colDoiTuong,
             this.colSoTien,
             this.colGhiChu});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhieuThuTraNo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhieuThuTraNo.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPhieuThuTraNo.EnableHeadersVisualStyles = false;
             this.dgvPhieuThuTraNo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.dgvPhieuThuTraNo.Location = new System.Drawing.Point(16, 82);
@@ -540,6 +553,7 @@ namespace QuanLyCuaHangVTNN
             this.dgvPhieuThuTraNo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieuThuTraNo.Size = new System.Drawing.Size(868, 235);
             this.dgvPhieuThuTraNo.TabIndex = 7;
+            this.dgvPhieuThuTraNo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuThuTraNo_CellClick);
             // 
             // colMaPhieu
             // 
@@ -606,6 +620,7 @@ namespace QuanLyCuaHangVTNN
             this.Name = "frmThuTraNo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lập phiếu Thu nợ khách hàng / Trả nợ Nhà cung cấp";
+            this.Load += new System.EventHandler(this.frmThuTraNo_Load);
             this.pnlThongTin.ResumeLayout(false);
             this.pnlThongTin.PerformLayout();
             this.pnlDanhSach.ResumeLayout(false);
