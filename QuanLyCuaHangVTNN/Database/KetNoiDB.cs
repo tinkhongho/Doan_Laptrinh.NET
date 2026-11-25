@@ -11,7 +11,7 @@ namespace QuanLyCuaHangVTNN
     public static class KetNoiDB
     {
         // Máy của bạn là TrongTin_PC\SQLEXPRESS (dùng .\SQLEXPRESS sẽ chạy được cho cả máy bạn và máy nhóm)
-        public static string strKetNoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLVTNN;Integrated Security=True";
+        public static string strKetNoi = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=QLVTNN;Integrated Security=True";
 
         // Lưu thông tin người dùng sau khi đăng nhập để phân quyền
         public static string TenDangNhap = "";
