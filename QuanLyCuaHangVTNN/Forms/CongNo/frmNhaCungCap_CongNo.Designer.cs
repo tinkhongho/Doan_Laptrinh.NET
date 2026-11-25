@@ -59,7 +59,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // pnlThongTin
             // 
-            this.pnlThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlThongTin.BackColor = System.Drawing.Color.White;
             this.pnlThongTin.Controls.Add(this.pnlVienTren);
@@ -117,7 +117,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // txtMaNCC
             // 
-            this.txtMaNCC.Location = new System.Drawing.Point(118, 43);
+            this.txtMaNCC.Location = new System.Drawing.Point(102, 43);
             this.txtMaNCC.MaxLength = 10;
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(150, 29);
@@ -127,7 +127,7 @@ namespace QuanLyCuaHangVTNN
             // 
             this.lblTenNCC.AutoSize = true;
             this.lblTenNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblTenNCC.Location = new System.Drawing.Point(290, 46);
+            this.lblTenNCC.Location = new System.Drawing.Point(268, 46);
             this.lblTenNCC.Name = "lblTenNCC";
             this.lblTenNCC.Size = new System.Drawing.Size(149, 23);
             this.lblTenNCC.TabIndex = 4;
@@ -135,17 +135,17 @@ namespace QuanLyCuaHangVTNN
             // 
             // txtTenNCC
             // 
-            this.txtTenNCC.Location = new System.Drawing.Point(435, 43);
+            this.txtTenNCC.Location = new System.Drawing.Point(422, 43);
             this.txtTenNCC.MaxLength = 150;
             this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(199, 29);
+            this.txtTenNCC.Size = new System.Drawing.Size(194, 29);
             this.txtTenNCC.TabIndex = 5;
             // 
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
             this.lblSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblSDT.Location = new System.Drawing.Point(640, 46);
+            this.lblSDT.Location = new System.Drawing.Point(630, 46);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(115, 23);
             this.lblSDT.TabIndex = 6;
@@ -153,10 +153,12 @@ namespace QuanLyCuaHangVTNN
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(750, 43);
+            this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSDT.Location = new System.Drawing.Point(752, 43);
             this.txtSDT.MaxLength = 15;
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(137, 29);
+            this.txtSDT.Size = new System.Drawing.Size(132, 29);
             this.txtSDT.TabIndex = 7;
             // 
             // lblDiaChi
@@ -171,17 +173,17 @@ namespace QuanLyCuaHangVTNN
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(118, 81);
+            this.txtDiaChi.Location = new System.Drawing.Point(102, 81);
             this.txtDiaChi.MaxLength = 200;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(504, 29);
+            this.txtDiaChi.Size = new System.Drawing.Size(514, 29);
             this.txtDiaChi.TabIndex = 9;
             // 
             // lblCongNoNCC
             // 
             this.lblCongNoNCC.AutoSize = true;
             this.lblCongNoNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblCongNoNCC.Location = new System.Drawing.Point(640, 84);
+            this.lblCongNoNCC.Location = new System.Drawing.Point(630, 84);
             this.lblCongNoNCC.Name = "lblCongNoNCC";
             this.lblCongNoNCC.Size = new System.Drawing.Size(115, 23);
             this.lblCongNoNCC.TabIndex = 10;
@@ -189,15 +191,18 @@ namespace QuanLyCuaHangVTNN
             // 
             // txtCongNoNCC
             // 
+            this.txtCongNoNCC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCongNoNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtCongNoNCC.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCongNoNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.txtCongNoNCC.Location = new System.Drawing.Point(753, 78);
+            this.txtCongNoNCC.Location = new System.Drawing.Point(752, 81);
             this.txtCongNoNCC.Name = "txtCongNoNCC";
             this.txtCongNoNCC.ReadOnly = true;
-            this.txtCongNoNCC.Size = new System.Drawing.Size(134, 29);
+            this.txtCongNoNCC.Size = new System.Drawing.Size(132, 29);
             this.txtCongNoNCC.TabIndex = 11;
             this.txtCongNoNCC.Text = "0";
+            this.txtCongNoNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnThem
             // 
@@ -207,7 +212,7 @@ namespace QuanLyCuaHangVTNN
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(118, 126);
+            this.btnThem.Location = new System.Drawing.Point(102, 126);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 34);
             this.btnThem.TabIndex = 12;
@@ -223,7 +228,7 @@ namespace QuanLyCuaHangVTNN
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(230, 126);
+            this.btnSua.Location = new System.Drawing.Point(214, 126);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 34);
             this.btnSua.TabIndex = 13;
@@ -239,7 +244,7 @@ namespace QuanLyCuaHangVTNN
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(342, 126);
+            this.btnXoa.Location = new System.Drawing.Point(326, 126);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 34);
             this.btnXoa.TabIndex = 14;
@@ -255,7 +260,7 @@ namespace QuanLyCuaHangVTNN
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(454, 126);
+            this.btnLuu.Location = new System.Drawing.Point(438, 126);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 34);
             this.btnLuu.TabIndex = 15;
@@ -271,7 +276,7 @@ namespace QuanLyCuaHangVTNN
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnHuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnHuy.Location = new System.Drawing.Point(566, 126);
+            this.btnHuy.Location = new System.Drawing.Point(550, 126);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 34);
             this.btnHuy.TabIndex = 16;
@@ -281,6 +286,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // btnThoat
             // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.FlatAppearance.BorderSize = 0;
@@ -297,8 +303,8 @@ namespace QuanLyCuaHangVTNN
             // 
             // pnlDanhSach
             // 
-            this.pnlDanhSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlDanhSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDanhSach.BackColor = System.Drawing.Color.White;
             this.pnlDanhSach.Controls.Add(this.lblTieuDeDanhSach);
@@ -337,10 +343,11 @@ namespace QuanLyCuaHangVTNN
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(105, 42);
+            this.txtTimKiem.Location = new System.Drawing.Point(104, 43);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(195, 29);
+            this.txtTimKiem.Size = new System.Drawing.Size(210, 29);
             this.txtTimKiem.TabIndex = 2;
+            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
             // 
             // btnTimKiem
             // 
@@ -350,7 +357,7 @@ namespace QuanLyCuaHangVTNN
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.Location = new System.Drawing.Point(306, 38);
+            this.btnTimKiem.Location = new System.Drawing.Point(324, 38);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 34);
             this.btnTimKiem.TabIndex = 3;
@@ -364,7 +371,7 @@ namespace QuanLyCuaHangVTNN
             this.chkChiHienThiConNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkChiHienThiConNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.chkChiHienThiConNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(108)))), ((int)(((byte)(0)))));
-            this.chkChiHienThiConNo.Location = new System.Drawing.Point(424, 45);
+            this.chkChiHienThiConNo.Location = new System.Drawing.Point(440, 44);
             this.chkChiHienThiConNo.Name = "chkChiHienThiConNo";
             this.chkChiHienThiConNo.Size = new System.Drawing.Size(313, 27);
             this.chkChiHienThiConNo.TabIndex = 4;
@@ -374,6 +381,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // btnLamMoi
             // 
+            this.btnLamMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLamMoi.FlatAppearance.BorderSize = 0;
@@ -390,10 +398,11 @@ namespace QuanLyCuaHangVTNN
             // 
             // lblTongCongNoNCC
             // 
+            this.lblTongCongNoNCC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTongCongNoNCC.AutoSize = true;
             this.lblTongCongNoNCC.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTongCongNoNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblTongCongNoNCC.Location = new System.Drawing.Point(600, 12);
+            this.lblTongCongNoNCC.Location = new System.Drawing.Point(648, 12);
             this.lblTongCongNoNCC.Name = "lblTongCongNoNCC";
             this.lblTongCongNoNCC.Size = new System.Drawing.Size(220, 23);
             this.lblTongCongNoNCC.TabIndex = 6;
@@ -402,8 +411,8 @@ namespace QuanLyCuaHangVTNN
             // dgvNhaCungCap
             // 
             this.dgvNhaCungCap.AllowUserToAddRows = false;
-            this.dgvNhaCungCap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvNhaCungCap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNhaCungCap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhaCungCap.BackgroundColor = System.Drawing.Color.White;
@@ -411,7 +420,7 @@ namespace QuanLyCuaHangVTNN
             this.dgvNhaCungCap.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
