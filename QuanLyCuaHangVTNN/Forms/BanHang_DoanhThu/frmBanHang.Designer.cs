@@ -2,48 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmBanHang
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Panel pnlChonHang;
-        private System.Windows.Forms.Panel pnlVienChonHang;
-        private System.Windows.Forms.Label lblHangHoa;
-        private System.Windows.Forms.ComboBox cboHangHoa;
-        private System.Windows.Forms.Label lblTonKho;
-        private System.Windows.Forms.Label lblDonGia;
-        private System.Windows.Forms.TextBox txtDonGiaBan;
-        private System.Windows.Forms.Label lblSoLuong;
-        private System.Windows.Forms.NumericUpDown numSoLuong;
-        private System.Windows.Forms.Button btnThemHang;
-        private System.Windows.Forms.Label lblGoiY;
-        private System.Windows.Forms.Button btnXoaDong;
-        private System.Windows.Forms.Panel pnlChiTietHoaDon;
-        private System.Windows.Forms.Label lblTieuDeChiTiet;
-        private System.Windows.Forms.DataGridView dgvChiTietHoaDon;
-        private System.Windows.Forms.Panel pnlThongTinKhach;
-        private System.Windows.Forms.Panel pnlVienThongTinKhach;
-        private System.Windows.Forms.Label lblTieuDeHD;
-        private System.Windows.Forms.Label lblMaHD;
-        private System.Windows.Forms.TextBox txtMaHD;
-        private System.Windows.Forms.Label lblNgayBan;
-        private System.Windows.Forms.DateTimePicker dtpNgayBan;
-        private System.Windows.Forms.Label lblKhachHang;
-        private System.Windows.Forms.ComboBox cboKhachHang;
-        private System.Windows.Forms.Label lblThongTinNoKH;
-        private System.Windows.Forms.Label lblGhiChu;
-        private System.Windows.Forms.TextBox txtGhiChu;
-        private System.Windows.Forms.Panel pnlThanhToan;
-        private System.Windows.Forms.Panel pnlVienThanhToan;
-        private System.Windows.Forms.Label lblTieuDeTT;
-        private System.Windows.Forms.Label lblNhanTongTien;
-        private System.Windows.Forms.Label lblTongTien;
-        private System.Windows.Forms.CheckBox chkThanhToanDu;
-        private System.Windows.Forms.Label lblNhanKhachTra;
-        private System.Windows.Forms.TextBox txtKhachThanhToan;
-        private System.Windows.Forms.Label lblNhanConNo;
-        private System.Windows.Forms.Label lblConNo;
-        private System.Windows.Forms.Label lblDuNoSauBan;
-        private System.Windows.Forms.Button btnLuuHoaDon;
-        private System.Windows.Forms.Button btnLamMoi;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -55,10 +22,18 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cmsGioHang = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuXoaMatHangGio = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuXoaTatCaGio = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlChonHang = new System.Windows.Forms.Panel();
             this.btnXoaDong = new System.Windows.Forms.Button();
             this.lblGoiY = new System.Windows.Forms.Label();
@@ -302,6 +277,8 @@ namespace QuanLyCuaHangVTNN
             this.dgvChiTietHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiTietHoaDon.EnableHeadersVisualStyles = false;
             this.dgvChiTietHoaDon.Location = new System.Drawing.Point(14, 42);
+            this.dgvChiTietHoaDon.MultiSelect = false;
+            this.dgvChiTietHoaDon.ContextMenuStrip = this.cmsGioHang;
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.ReadOnly = true;
             this.dgvChiTietHoaDon.RowHeadersVisible = false;
@@ -309,6 +286,28 @@ namespace QuanLyCuaHangVTNN
             this.dgvChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(647, 367);
             this.dgvChiTietHoaDon.TabIndex = 1;
+            // 
+            // cmsGioHang
+            // 
+            this.cmsGioHang.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuXoaMatHangGio,
+            this.mnuXoaTatCaGio});
+            this.cmsGioHang.Name = "cmsGioHang";
+            this.cmsGioHang.Size = new System.Drawing.Size(215, 52);
+            // 
+            // mnuXoaMatHangGio
+            // 
+            this.mnuXoaMatHangGio.Name = "mnuXoaMatHangGio";
+            this.mnuXoaMatHangGio.Size = new System.Drawing.Size(214, 24);
+            this.mnuXoaMatHangGio.Text = "Xóa dòng vật tư đang chọn";
+            this.mnuXoaMatHangGio.Click += new System.EventHandler(this.mnuXoaMatHangGio_Click);
+            // 
+            // mnuXoaTatCaGio
+            // 
+            this.mnuXoaTatCaGio.Name = "mnuXoaTatCaGio";
+            this.mnuXoaTatCaGio.Size = new System.Drawing.Size(214, 24);
+            this.mnuXoaTatCaGio.Text = "Làm trống giỏ hàng";
+            this.mnuXoaTatCaGio.Click += new System.EventHandler(this.mnuXoaTatCaGio_Click);
             // 
             // lblTieuDeChiTiet
             // 
@@ -338,16 +337,17 @@ namespace QuanLyCuaHangVTNN
             this.pnlThongTinKhach.Controls.Add(this.pnlVienThongTinKhach);
             this.pnlThongTinKhach.Location = new System.Drawing.Point(705, 14);
             this.pnlThongTinKhach.Name = "pnlThongTinKhach";
-            this.pnlThongTinKhach.Size = new System.Drawing.Size(324, 250);
+            this.pnlThongTinKhach.Size = new System.Drawing.Size(324, 276);
             this.pnlThongTinKhach.TabIndex = 2;
             // 
             // txtGhiChu
             // 
             this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtGhiChu.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.txtGhiChu.Location = new System.Drawing.Point(112, 204);
+            this.txtGhiChu.Location = new System.Drawing.Point(112, 216);
+            this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(196, 29);
+            this.txtGhiChu.Size = new System.Drawing.Size(196, 46);
             this.txtGhiChu.TabIndex = 9;
             // 
             // lblGhiChu
@@ -355,7 +355,7 @@ namespace QuanLyCuaHangVTNN
             this.lblGhiChu.AutoSize = true;
             this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblGhiChu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblGhiChu.Location = new System.Drawing.Point(14, 207);
+            this.lblGhiChu.Location = new System.Drawing.Point(14, 220);
             this.lblGhiChu.Name = "lblGhiChu";
             this.lblGhiChu.Size = new System.Drawing.Size(66, 21);
             this.lblGhiChu.TabIndex = 8;
@@ -365,7 +365,7 @@ namespace QuanLyCuaHangVTNN
             // 
             this.lblThongTinNoKH.Font = new System.Drawing.Font("Segoe UI", 8.75F);
             this.lblThongTinNoKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.lblThongTinNoKH.Location = new System.Drawing.Point(14, 152);
+            this.lblThongTinNoKH.Location = new System.Drawing.Point(14, 166);
             this.lblThongTinNoKH.Name = "lblThongTinNoKH";
             this.lblThongTinNoKH.Size = new System.Drawing.Size(294, 44);
             this.lblThongTinNoKH.TabIndex = 7;
@@ -376,7 +376,7 @@ namespace QuanLyCuaHangVTNN
             this.cboKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKhachHang.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.cboKhachHang.FormattingEnabled = true;
-            this.cboKhachHang.Location = new System.Drawing.Point(112, 113);
+            this.cboKhachHang.Location = new System.Drawing.Point(112, 128);
             this.cboKhachHang.Name = "cboKhachHang";
             this.cboKhachHang.Size = new System.Drawing.Size(196, 29);
             this.cboKhachHang.TabIndex = 6;
@@ -387,7 +387,7 @@ namespace QuanLyCuaHangVTNN
             this.lblKhachHang.AutoSize = true;
             this.lblKhachHang.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblKhachHang.Location = new System.Drawing.Point(14, 117);
+            this.lblKhachHang.Location = new System.Drawing.Point(14, 132);
             this.lblKhachHang.Name = "lblKhachHang";
             this.lblKhachHang.Size = new System.Drawing.Size(96, 21);
             this.lblKhachHang.TabIndex = 5;
@@ -398,7 +398,7 @@ namespace QuanLyCuaHangVTNN
             this.dtpNgayBan.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayBan.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayBan.Location = new System.Drawing.Point(112, 77);
+            this.dtpNgayBan.Location = new System.Drawing.Point(112, 86);
             this.dtpNgayBan.Name = "dtpNgayBan";
             this.dtpNgayBan.Size = new System.Drawing.Size(196, 29);
             this.dtpNgayBan.TabIndex = 4;
@@ -408,7 +408,7 @@ namespace QuanLyCuaHangVTNN
             this.lblNgayBan.AutoSize = true;
             this.lblNgayBan.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblNgayBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblNgayBan.Location = new System.Drawing.Point(14, 81);
+            this.lblNgayBan.Location = new System.Drawing.Point(14, 90);
             this.lblNgayBan.Name = "lblNgayBan";
             this.lblNgayBan.Size = new System.Drawing.Size(80, 21);
             this.lblNgayBan.TabIndex = 3;
@@ -418,7 +418,7 @@ namespace QuanLyCuaHangVTNN
             // 
             this.txtMaHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaHD.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.txtMaHD.Location = new System.Drawing.Point(112, 41);
+            this.txtMaHD.Location = new System.Drawing.Point(112, 44);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(196, 29);
             this.txtMaHD.TabIndex = 2;
@@ -428,7 +428,7 @@ namespace QuanLyCuaHangVTNN
             this.lblMaHD.AutoSize = true;
             this.lblMaHD.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblMaHD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblMaHD.Location = new System.Drawing.Point(14, 44);
+            this.lblMaHD.Location = new System.Drawing.Point(14, 47);
             this.lblMaHD.Name = "lblMaHD";
             this.lblMaHD.Size = new System.Drawing.Size(65, 21);
             this.lblMaHD.TabIndex = 1;
@@ -471,9 +471,9 @@ namespace QuanLyCuaHangVTNN
             this.pnlThanhToan.Controls.Add(this.lblNhanTongTien);
             this.pnlThanhToan.Controls.Add(this.lblTieuDeTT);
             this.pnlThanhToan.Controls.Add(this.pnlVienThanhToan);
-            this.pnlThanhToan.Location = new System.Drawing.Point(705, 276);
+            this.pnlThanhToan.Location = new System.Drawing.Point(705, 298);
             this.pnlThanhToan.Name = "pnlThanhToan";
-            this.pnlThanhToan.Size = new System.Drawing.Size(324, 307);
+            this.pnlThanhToan.Size = new System.Drawing.Size(324, 285);
             this.pnlThanhToan.TabIndex = 3;
             // 
             // btnLamMoi
@@ -484,9 +484,9 @@ namespace QuanLyCuaHangVTNN
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
-            this.btnLamMoi.Location = new System.Drawing.Point(208, 240);
+            this.btnLamMoi.Location = new System.Drawing.Point(208, 228);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(100, 46);
+            this.btnLamMoi.Size = new System.Drawing.Size(100, 44);
             this.btnLamMoi.TabIndex = 10;
             this.btnLamMoi.Text = "Đơn mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -500,9 +500,9 @@ namespace QuanLyCuaHangVTNN
             this.btnLuuHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuHoaDon.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLuuHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnLuuHoaDon.Location = new System.Drawing.Point(14, 240);
+            this.btnLuuHoaDon.Location = new System.Drawing.Point(14, 228);
             this.btnLuuHoaDon.Name = "btnLuuHoaDon";
-            this.btnLuuHoaDon.Size = new System.Drawing.Size(186, 46);
+            this.btnLuuHoaDon.Size = new System.Drawing.Size(186, 44);
             this.btnLuuHoaDon.TabIndex = 9;
             this.btnLuuHoaDon.Text = "LƯU HÓA ĐƠN";
             this.btnLuuHoaDon.UseVisualStyleBackColor = false;
@@ -510,9 +510,9 @@ namespace QuanLyCuaHangVTNN
             // 
             // lblDuNoSauBan
             // 
-            this.lblDuNoSauBan.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Italic);
+            this.lblDuNoSauBan.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Italic);
             this.lblDuNoSauBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.lblDuNoSauBan.Location = new System.Drawing.Point(14, 192);
+            this.lblDuNoSauBan.Location = new System.Drawing.Point(14, 186);
             this.lblDuNoSauBan.Name = "lblDuNoSauBan";
             this.lblDuNoSauBan.Size = new System.Drawing.Size(294, 38);
             this.lblDuNoSauBan.TabIndex = 8;
@@ -651,5 +651,49 @@ namespace QuanLyCuaHangVTNN
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlChonHang;
+        private System.Windows.Forms.Panel pnlVienChonHang;
+        private System.Windows.Forms.Label lblHangHoa;
+        private System.Windows.Forms.ComboBox cboHangHoa;
+        private System.Windows.Forms.Label lblTonKho;
+        private System.Windows.Forms.Label lblDonGia;
+        private System.Windows.Forms.TextBox txtDonGiaBan;
+        private System.Windows.Forms.Label lblSoLuong;
+        private System.Windows.Forms.NumericUpDown numSoLuong;
+        private System.Windows.Forms.Button btnThemHang;
+        private System.Windows.Forms.Label lblGoiY;
+        private System.Windows.Forms.Button btnXoaDong;
+        private System.Windows.Forms.Panel pnlChiTietHoaDon;
+        private System.Windows.Forms.Label lblTieuDeChiTiet;
+        private System.Windows.Forms.DataGridView dgvChiTietHoaDon;
+        private System.Windows.Forms.Panel pnlThongTinKhach;
+        private System.Windows.Forms.Panel pnlVienThongTinKhach;
+        private System.Windows.Forms.Label lblTieuDeHD;
+        private System.Windows.Forms.Label lblMaHD;
+        private System.Windows.Forms.TextBox txtMaHD;
+        private System.Windows.Forms.Label lblNgayBan;
+        private System.Windows.Forms.DateTimePicker dtpNgayBan;
+        private System.Windows.Forms.Label lblKhachHang;
+        private System.Windows.Forms.ComboBox cboKhachHang;
+        private System.Windows.Forms.Label lblThongTinNoKH;
+        private System.Windows.Forms.Label lblGhiChu;
+        private System.Windows.Forms.TextBox txtGhiChu;
+        private System.Windows.Forms.Panel pnlThanhToan;
+        private System.Windows.Forms.Panel pnlVienThanhToan;
+        private System.Windows.Forms.Label lblTieuDeTT;
+        private System.Windows.Forms.Label lblNhanTongTien;
+        private System.Windows.Forms.Label lblTongTien;
+        private System.Windows.Forms.CheckBox chkThanhToanDu;
+        private System.Windows.Forms.Label lblNhanKhachTra;
+        private System.Windows.Forms.TextBox txtKhachThanhToan;
+        private System.Windows.Forms.Label lblNhanConNo;
+        private System.Windows.Forms.Label lblConNo;
+        private System.Windows.Forms.Label lblDuNoSauBan;
+        private System.Windows.Forms.Button btnLuuHoaDon;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.ContextMenuStrip cmsGioHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuXoaMatHangGio;
+        private System.Windows.Forms.ToolStripMenuItem mnuXoaTatCaGio;
     }
 }

@@ -67,7 +67,7 @@ namespace QuanLyCuaHangVTNN
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Chưa kết nối được CSDL QLVTNN (Hãy chạy file Database/QLVTNN.sql trước).\nChi tiết: " + ex.Message,
+                MessageBox.Show("Không thể kết nối CSDL QLVTNN.\nChi tiết: " + ex.Message,
                     "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

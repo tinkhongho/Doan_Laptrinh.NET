@@ -28,7 +28,7 @@ namespace QuanLyCuaHangVTNN
             colSoTien.DefaultCellStyle.Format = "N0";
             colSoTien.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            cboLocLoaiPhieu.SelectedIndex = 0; // "Tất cả"
+            cboLocLoaiPhieu.SelectedIndex = 0;
             LoadKhachHang();
             LoadNhaCungCap();
 
@@ -38,6 +38,9 @@ namespace QuanLyCuaHangVTNN
             LoadDanhSachPhieu();
         }
 
+        /// <summary>
+        /// Bật tắt các điều khiển khi chuyển giữa chế độ xem và lập phiếu mới.
+        /// </summary>
         private void SetTrangThai(bool taoMoi)
         {
             dangTaoMoi = taoMoi;
@@ -53,12 +56,15 @@ namespace QuanLyCuaHangVTNN
 
             btnThem.Enabled = !taoMoi;
             btnLuu.Enabled = taoMoi;
-            btnXoa.Enabled = !taoMoi;
+            btnXoa.Enabled = !taoMoi && (KetNoiDB.QuyenHan != "Nhân viên");
             btnHuy.Enabled = taoMoi;
 
             dgvPhieuThuTraNo.Enabled = !taoMoi;
         }
 
+        /// <summary>
+        /// Nạp danh sách khách hàng vào ComboBox.
+        /// </summary>
         private void LoadKhachHang()
         {
             try
@@ -83,6 +89,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Nạp danh sách nhà cung cấp vào ComboBox.
+        /// </summary>
         private void LoadNhaCungCap()
         {
             try
@@ -107,6 +116,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Tải lịch sử các phiếu thu nợ khách hàng và trả nợ nhà cung cấp.
+        /// </summary>
         private void LoadDanhSachPhieu()
         {
             try
@@ -163,6 +175,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Đặt lại giá trị mặc định cho các ô nhập trên phiếu.
+        /// </summary>
         private void XoaTrangInput()
         {
             txtMaPhieu.Clear();
@@ -176,6 +191,9 @@ namespace QuanLyCuaHangVTNN
             txtGhiChu.Clear();
         }
 
+        /// <summary>
+        /// Hiển thị chi tiết phiếu đang chọn trên lưới lên vùng thông tin.
+        /// </summary>
         private void HienThiDongDangChon(int rowIndex)
         {
             if (rowIndex < 0 || rowIndex >= dgvPhieuThuTraNo.Rows.Count) return;
@@ -220,6 +238,9 @@ namespace QuanLyCuaHangVTNN
                 HienThiDongDangChon(e.RowIndex);
         }
 
+        /// <summary>
+        /// Chuyển đổi đối tượng chọn và tiền tố mã phiếu theo loại thu hoặc trả nợ.
+        /// </summary>
         private void XuLyDoiLoaiPhieu()
         {
             if (dangLoadDuLieu || !dangTaoMoi) return;
@@ -266,6 +287,9 @@ namespace QuanLyCuaHangVTNN
             if (dangTaoMoi) TinhNoConLai();
         }
 
+        /// <summary>
+        /// Lấy số dư nợ hiện tại của khách hàng hoặc nhà cung cấp đang chọn.
+        /// </summary>
         private void CapNhatNoHienTai()
         {
             noHienTai = 0;
@@ -288,6 +312,9 @@ namespace QuanLyCuaHangVTNN
                 TinhNoConLai();
         }
 
+        /// <summary>
+        /// Tính số dư nợ còn lại sau khi trừ số tiền thu hoặc trả.
+        /// </summary>
         private void TinhNoConLai()
         {
             decimal soTien = ParseSoTien(txtSoTien.Text);
@@ -295,6 +322,9 @@ namespace QuanLyCuaHangVTNN
             txtNoConLai.Text = conLai.ToString("N0");
         }
 
+        /// <summary>
+        /// Chuyển chuỗi tiền tệ nhập vào sang kiểu số decimal.
+        /// </summary>
         private decimal ParseSoTien(string text)
         {
             string clean = text.Trim().Replace(",", "").Replace(".", "");
@@ -303,6 +333,9 @@ namespace QuanLyCuaHangVTNN
             return 0;
         }
 
+        /// <summary>
+        /// Tự động sinh mã phiếu thu hoặc phiếu chi mới.
+        /// </summary>
         private string TaoMaPhieuMoi(string tienTo)
         {
             try

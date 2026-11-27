@@ -2,8 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmLoaiHang
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -15,10 +22,14 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlThongTin = new System.Windows.Forms.Panel();
             this.pnlVienTren = new System.Windows.Forms.Panel();
             this.lblTieuDeThongTin = new System.Windows.Forms.Label();
@@ -51,7 +62,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // pnlThongTin
             // 
-            this.pnlThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlThongTin.BackColor = System.Drawing.Color.White;
             this.pnlThongTin.Controls.Add(this.pnlVienTren);
@@ -89,7 +100,7 @@ namespace QuanLyCuaHangVTNN
             this.lblTieuDeThongTin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
             this.lblTieuDeThongTin.Location = new System.Drawing.Point(16, 12);
             this.lblTieuDeThongTin.Name = "lblTieuDeThongTin";
-            this.lblTieuDeThongTin.Size = new System.Drawing.Size(262, 19);
+            this.lblTieuDeThongTin.Size = new System.Drawing.Size(337, 25);
             this.lblTieuDeThongTin.TabIndex = 1;
             this.lblTieuDeThongTin.Text = "THÔNG TIN DANH MỤC LOẠI VẬT TƯ";
             // 
@@ -99,7 +110,7 @@ namespace QuanLyCuaHangVTNN
             this.lblMaLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblMaLoai.Location = new System.Drawing.Point(16, 46);
             this.lblMaLoai.Name = "lblMaLoai";
-            this.lblMaLoai.Size = new System.Drawing.Size(61, 17);
+            this.lblMaLoai.Size = new System.Drawing.Size(70, 23);
             this.lblMaLoai.TabIndex = 2;
             this.lblMaLoai.Text = "Mã loại:";
             // 
@@ -108,16 +119,16 @@ namespace QuanLyCuaHangVTNN
             this.txtMaLoai.Location = new System.Drawing.Point(85, 43);
             this.txtMaLoai.MaxLength = 10;
             this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(140, 25);
+            this.txtMaLoai.Size = new System.Drawing.Size(140, 29);
             this.txtMaLoai.TabIndex = 3;
             // 
             // lblTenLoai
             // 
             this.lblTenLoai.AutoSize = true;
             this.lblTenLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblTenLoai.Location = new System.Drawing.Point(242, 46);
+            this.lblTenLoai.Location = new System.Drawing.Point(226, 46);
             this.lblTenLoai.Name = "lblTenLoai";
-            this.lblTenLoai.Size = new System.Drawing.Size(90, 17);
+            this.lblTenLoai.Size = new System.Drawing.Size(116, 23);
             this.lblTenLoai.TabIndex = 4;
             this.lblTenLoai.Text = "Tên loại hàng:";
             // 
@@ -126,27 +137,27 @@ namespace QuanLyCuaHangVTNN
             this.txtTenLoai.Location = new System.Drawing.Point(342, 43);
             this.txtTenLoai.MaxLength = 100;
             this.txtTenLoai.Name = "txtTenLoai";
-            this.txtTenLoai.Size = new System.Drawing.Size(220, 25);
+            this.txtTenLoai.Size = new System.Drawing.Size(220, 29);
             this.txtTenLoai.TabIndex = 5;
             // 
             // lblMoTa
             // 
             this.lblMoTa.AutoSize = true;
             this.lblMoTa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblMoTa.Location = new System.Drawing.Point(580, 46);
+            this.lblMoTa.Location = new System.Drawing.Point(569, 46);
             this.lblMoTa.Name = "lblMoTa";
-            this.lblMoTa.Size = new System.Drawing.Size(48, 17);
+            this.lblMoTa.Size = new System.Drawing.Size(59, 23);
             this.lblMoTa.TabIndex = 6;
             this.lblMoTa.Text = "Mô tả:";
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtMoTa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMoTa.Location = new System.Drawing.Point(632, 43);
             this.txtMoTa.MaxLength = 250;
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(252, 25);
+            this.txtMoTa.Size = new System.Drawing.Size(252, 29);
             this.txtMoTa.TabIndex = 7;
             // 
             // btnThem
@@ -163,6 +174,7 @@ namespace QuanLyCuaHangVTNN
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -178,6 +190,7 @@ namespace QuanLyCuaHangVTNN
             this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -193,6 +206,7 @@ namespace QuanLyCuaHangVTNN
             this.btnXoa.TabIndex = 10;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -208,6 +222,7 @@ namespace QuanLyCuaHangVTNN
             this.btnLuu.TabIndex = 11;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -223,6 +238,7 @@ namespace QuanLyCuaHangVTNN
             this.btnHuy.TabIndex = 12;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThoat
             // 
@@ -239,11 +255,12 @@ namespace QuanLyCuaHangVTNN
             this.btnThoat.TabIndex = 13;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // pnlDanhSach
             // 
-            this.pnlDanhSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlDanhSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDanhSach.BackColor = System.Drawing.Color.White;
             this.pnlDanhSach.Controls.Add(this.lblTieuDeDanhSach);
@@ -264,7 +281,7 @@ namespace QuanLyCuaHangVTNN
             this.lblTieuDeDanhSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
             this.lblTieuDeDanhSach.Location = new System.Drawing.Point(16, 12);
             this.lblTieuDeDanhSach.Name = "lblTieuDeDanhSach";
-            this.lblTieuDeDanhSach.Size = new System.Drawing.Size(288, 19);
+            this.lblTieuDeDanhSach.Size = new System.Drawing.Size(370, 25);
             this.lblTieuDeDanhSach.TabIndex = 0;
             this.lblTieuDeDanhSach.Text = "DANH SÁCH LOẠI VẬT TƯ NÔNG NGHIỆP";
             // 
@@ -272,17 +289,17 @@ namespace QuanLyCuaHangVTNN
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblTimKiem.Location = new System.Drawing.Point(16, 46);
+            this.lblTimKiem.Location = new System.Drawing.Point(10, 46);
             this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(66, 17);
+            this.lblTimKiem.Size = new System.Drawing.Size(83, 23);
             this.lblTimKiem.TabIndex = 1;
             this.lblTimKiem.Text = "Tìm kiếm:";
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(90, 43);
+            this.txtTimKiem.Location = new System.Drawing.Point(96, 43);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(260, 25);
+            this.txtTimKiem.Size = new System.Drawing.Size(260, 29);
             this.txtTimKiem.TabIndex = 2;
             // 
             // btnTimKiem
@@ -299,6 +316,7 @@ namespace QuanLyCuaHangVTNN
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLamMoi
             // 
@@ -315,39 +333,40 @@ namespace QuanLyCuaHangVTNN
             this.btnLamMoi.TabIndex = 4;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // dgvLoaiHang
             // 
             this.dgvLoaiHang.AllowUserToAddRows = false;
-            this.dgvLoaiHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvLoaiHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLoaiHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoaiHang.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoaiHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLoaiHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLoaiHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLoaiHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLoaiHang.ColumnHeadersHeight = 35;
             this.dgvLoaiHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLoaiHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaLoai,
             this.colTenLoai,
             this.colMoTa});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLoaiHang.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLoaiHang.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLoaiHang.EnableHeadersVisualStyles = false;
             this.dgvLoaiHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.dgvLoaiHang.Location = new System.Drawing.Point(16, 82);
@@ -360,6 +379,7 @@ namespace QuanLyCuaHangVTNN
             this.dgvLoaiHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiHang.Size = new System.Drawing.Size(868, 304);
             this.dgvLoaiHang.TabIndex = 5;
+            this.dgvLoaiHang.SelectionChanged += new System.EventHandler(this.dgvLoaiHang_SelectionChanged);
             // 
             // colMaLoai
             // 
@@ -381,7 +401,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // colMoTa
             // 
-            this.colMoTa.DataPropertyName = "mota";
+            this.colMoTa.DataPropertyName = "ghichu";
             this.colMoTa.FillWeight = 180F;
             this.colMoTa.HeaderText = "Mô tả / Ghi chú";
             this.colMoTa.MinimumWidth = 6;
@@ -400,6 +420,7 @@ namespace QuanLyCuaHangVTNN
             this.Name = "frmLoaiHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Danh mục Loại vật tư";
+            this.Load += new System.EventHandler(this.frmLoaiHang_Load);
             this.pnlThongTin.ResumeLayout(false);
             this.pnlThongTin.PerformLayout();
             this.pnlDanhSach.ResumeLayout(false);

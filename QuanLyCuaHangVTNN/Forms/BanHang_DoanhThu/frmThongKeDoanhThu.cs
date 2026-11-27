@@ -1,6 +1,8 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangVTNN
@@ -24,6 +26,9 @@ namespace QuanLyCuaHangVTNN
             NapThongKe(false);
         }
 
+        /// <summary>
+        /// Xác định tên cột ngày lập trên bảng phiếu thu trả nợ.
+        /// </summary>
         private void KiemTraCotNgayPhieuThu()
         {
             try
@@ -41,6 +46,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Tổng hợp doanh thu, thực thu, lợi nhuận gộp và công nợ theo kỳ.
+        /// </summary>
         private void NapThongKe(bool locTheoNgay)
         {
             try
@@ -55,7 +63,6 @@ namespace QuanLyCuaHangVTNN
                     ? string.Format("Kỳ: {0:dd/MM/yyyy} - {1:dd/MM/yyyy}", tuNgay, denNgay)
                     : "Kỳ: Toàn bộ dữ liệu";
 
-                // 1. Doanh thu, Thực thu lúc bán, Công nợ phát sinh, Số hóa đơn
                 string sqlHD = @"SELECT COUNT(*),
                                         ISNULL(SUM(h.tongtien), 0),
                                         ISNULL(SUM(h.dathanhtoan), 0),
@@ -80,7 +87,6 @@ namespace QuanLyCuaHangVTNN
                 }
                 drHD.Close();
 
-                // 2. Tiền thu nợ khách hàng từ bảng phieuthutrano
                 decimal tienThuNo = 0;
                 try
                 {
@@ -102,7 +108,6 @@ namespace QuanLyCuaHangVTNN
                     tienThuNo = 0;
                 }
 
-                // 3. Lợi nhuận gộp từ chi tiết hóa đơn
                 string sqlLN = @"SELECT ISNULL(SUM((ct.dongiaban - ct.giavon) * ct.soluong), 0)
                                  FROM ct_hoadon ct
                                  INNER JOIN hoadon h ON ct.mahd = h.mahd " + dkNgayHD;
@@ -114,7 +119,6 @@ namespace QuanLyCuaHangVTNN
                 }
                 decimal loiNhuanGop = Convert.ToDecimal(cmdLN.ExecuteScalar());
 
-                // Hiển thị lên 4 thẻ KPI
                 decimal tongThucThu = thucThuBan + tienThuNo;
                 decimal tySuatLN = tongDoanhThu > 0 ? (loiNhuanGop / tongDoanhThu) * 100m : 0m;
 
@@ -130,17 +134,18 @@ namespace QuanLyCuaHangVTNN
                 lblSoCongNo.Text = string.Format("{0:N0} đ", congNoPhatSinh);
                 lblGhiChuCongNo.Text = "Khách ghi nợ mùa vụ trên hóa đơn";
 
-                // 4. Bảng trái: Thống kê Doanh thu & Lợi nhuận theo từng ngày
                 string sqlTheoNgay = @"SELECT CAST(h.ngayban AS DATE) AS ngay,
-                                              COUNT(DISTINCT h.mahd) AS sohd,
+                                              COUNT(h.mahd) AS sohd,
                                               ISNULL(SUM(h.tongtien), 0) AS doanhthu,
                                               ISNULL(SUM(h.dathanhtoan), 0) AS thucthu,
                                               ISNULL(SUM(h.conno), 0) AS conno,
-                                              ISNULL((SELECT SUM((ct.dongiaban - ct.giavon) * ct.soluong)
-                                                      FROM ct_hoadon ct
-                                                      INNER JOIN hoadon h2 ON ct.mahd = h2.mahd
-                                                      WHERE CAST(h2.ngayban AS DATE) = CAST(h.ngayban AS DATE)), 0) AS loinhuan
-                                       FROM hoadon h " + dkNgayHD + @"
+                                              ISNULL(SUM(ln.loinhuan_hd), 0) AS loinhuan
+                                       FROM hoadon h
+                                       LEFT JOIN (
+                                           SELECT mahd, SUM((dongiaban - giavon) * soluong) AS loinhuan_hd
+                                           FROM ct_hoadon
+                                           GROUP BY mahd
+                                       ) ln ON h.mahd = ln.mahd " + dkNgayHD + @"
                                        GROUP BY CAST(h.ngayban AS DATE)
                                        ORDER BY CAST(h.ngayban AS DATE) DESC";
 
@@ -180,7 +185,6 @@ namespace QuanLyCuaHangVTNN
                     dgvThongKeTheoNgay.Columns["loinhuan"].DefaultCellStyle.Format = "N0";
                 }
 
-                // 5. Bảng phải: Thống kê Doanh thu & Lợi nhuận theo mặt hàng
                 string sqlMatHang = @"SELECT ct.mahh,
                                              ISNULL(hh.tenhh, ct.mahh) AS tenhh,
                                              ISNULL(SUM(ct.soluong), 0) AS tongsl,
@@ -244,6 +248,73 @@ namespace QuanLyCuaHangVTNN
         private void btnTatCa_Click(object sender, EventArgs e)
         {
             NapThongKe(false);
+        }
+
+        private void btnXuatBaoCao_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDlg = new SaveFileDialog();
+            saveDlg.Title = "Xuất báo cáo Thống kê Doanh thu";
+            saveDlg.Filter = "Text File (*.txt)|*.txt|All Files (*.*)|*.*";
+            saveDlg.FileName = "BaoCaoDoanhThu_" + DateTime.Now.ToString("ddMMyyyy_HHmm") + ".txt";
+
+            if (saveDlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(saveDlg.FileName, false, Encoding.UTF8))
+                    {
+                        writer.WriteLine("======================================================================");
+                        writer.WriteLine("       BÁO CÁO THỐNG KÊ DOANH THU - THỰC THU - LỢI NHUẬN GỘP");
+                        writer.WriteLine("               CỬA HÀNG VẬT TƯ NÔNG NGHIỆP");
+                        writer.WriteLine("======================================================================");
+                        writer.WriteLine("Thời điểm xuất : " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
+                        writer.WriteLine("Người lập      : " + (string.IsNullOrEmpty(KetNoiDB.HoTen) ? "Quản lý" : KetNoiDB.HoTen));
+                        writer.WriteLine(lblKyThongKe.Text);
+                        writer.WriteLine("----------------------------------------------------------------------");
+                        writer.WriteLine("1. TỔNG HỢP CHỈ SỐ TÀI CHÍNH:");
+                        writer.WriteLine("   - Tổng doanh thu bán hàng : " + lblSoDoanhThu.Text + " (" + lblGhiChuDoanhThu.Text + ")");
+                        writer.WriteLine("   - Tổng tiền thực thu      : " + lblSoThucThu.Text + " (" + lblGhiChuThucThu.Text + ")");
+                        writer.WriteLine("   - Lợi nhuận gộp           : " + lblSoLoiNhuan.Text + " (" + lblGhiChuLoiNhuan.Text + ")");
+                        writer.WriteLine("   - Công nợ phát sinh       : " + lblSoCongNo.Text);
+                        writer.WriteLine("----------------------------------------------------------------------");
+                        writer.WriteLine("2. CHI TIẾT DOANH THU THEO NGÀY:");
+                        writer.WriteLine(string.Format("{0,-14}{1,8}{2,16}{3,16}{4,16}", "Ngày bán", "Số HĐ", "Doanh thu", "Thực thu", "Lợi nhuận"));
+                        foreach (DataGridViewRow r in dgvThongKeTheoNgay.Rows)
+                        {
+                            if (r.IsNewRow) continue;
+                            string ngay = Convert.ToDateTime(r.Cells["ngay"].Value).ToString("dd/MM/yyyy");
+                            string sohd = Convert.ToInt32(r.Cells["sohd"].Value).ToString();
+                            string dt = Convert.ToDecimal(r.Cells["doanhthu"].Value).ToString("N0");
+                            string tt = Convert.ToDecimal(r.Cells["thucthu"].Value).ToString("N0");
+                            string ln = Convert.ToDecimal(r.Cells["loinhuan"].Value).ToString("N0");
+                            writer.WriteLine(string.Format("{0,-14}{1,8}{2,16}{3,16}{4,16}", ngay, sohd, dt, tt, ln));
+                        }
+                        writer.WriteLine("----------------------------------------------------------------------");
+                        writer.WriteLine("3. THỐNG KÊ THEO MẶT HÀNG VẬT TƯ:");
+                        writer.WriteLine(string.Format("{0,-8}{1,-32}{2,8}{3,15}{4,15}", "Mã", "Tên vật tư", "SL bán", "Doanh thu", "Lợi nhuận"));
+                        foreach (DataGridViewRow r in dgvTopSanPham.Rows)
+                        {
+                            if (r.IsNewRow) continue;
+                            string ma = Convert.ToString(r.Cells["mahh"].Value);
+                            string ten = Convert.ToString(r.Cells["tenhh"].Value);
+                            if (ten.Length > 30) ten = ten.Substring(0, 27) + "...";
+                            string sl = Convert.ToInt32(r.Cells["tongsl"].Value).ToString("N0");
+                            string dt = Convert.ToDecimal(r.Cells["doanhthu"].Value).ToString("N0");
+                            string ln = Convert.ToDecimal(r.Cells["loinhuan"].Value).ToString("N0");
+                            writer.WriteLine(string.Format("{0,-8}{1,-32}{2,8}{3,15}{4,15}", ma, ten, sl, dt, ln));
+                        }
+                        writer.WriteLine("======================================================================");
+                    }
+
+                    MessageBox.Show("Đã xuất báo cáo thống kê thành công ra file:\n" + saveDlg.FileName,
+                        "Xuất báo cáo thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi ghi file báo cáo: " + ex.Message,
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

@@ -2,8 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmKhachHang_CongNo
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -15,6 +22,10 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -423,14 +434,14 @@ namespace QuanLyCuaHangVTNN
             // lblTongCongNo
             // 
             this.lblTongCongNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTongCongNo.AutoSize = true;
             this.lblTongCongNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTongCongNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblTongCongNo.Location = new System.Drawing.Point(640, 12);
+            this.lblTongCongNo.Location = new System.Drawing.Point(504, 12);
             this.lblTongCongNo.Name = "lblTongCongNo";
-            this.lblTongCongNo.Size = new System.Drawing.Size(229, 23);
+            this.lblTongCongNo.Size = new System.Drawing.Size(380, 25);
             this.lblTongCongNo.TabIndex = 6;
             this.lblTongCongNo.Text = "Tổng công nợ phải thu: 0 đ";
+            this.lblTongCongNo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgvKhachHang
             // 
@@ -484,7 +495,7 @@ namespace QuanLyCuaHangVTNN
             // colMaKH
             // 
             this.colMaKH.DataPropertyName = "makh";
-            this.colMaKH.FillWeight = 65F;
+            this.colMaKH.FillWeight = 70F;
             this.colMaKH.HeaderText = "Mã KH";
             this.colMaKH.MinimumWidth = 6;
             this.colMaKH.Name = "colMaKH";
@@ -493,8 +504,8 @@ namespace QuanLyCuaHangVTNN
             // colTenKH
             // 
             this.colTenKH.DataPropertyName = "tenkh";
-            this.colTenKH.FillWeight = 140F;
-            this.colTenKH.HeaderText = "Tên khách hàng (Nông dân)";
+            this.colTenKH.FillWeight = 165F;
+            this.colTenKH.HeaderText = "Tên khách hàng";
             this.colTenKH.MinimumWidth = 6;
             this.colTenKH.Name = "colTenKH";
             this.colTenKH.ReadOnly = true;
@@ -502,7 +513,7 @@ namespace QuanLyCuaHangVTNN
             // colSDT
             // 
             this.colSDT.DataPropertyName = "sdt";
-            this.colSDT.FillWeight = 85F;
+            this.colSDT.FillWeight = 95F;
             this.colSDT.HeaderText = "Số điện thoại";
             this.colSDT.MinimumWidth = 6;
             this.colSDT.Name = "colSDT";
@@ -511,7 +522,7 @@ namespace QuanLyCuaHangVTNN
             // colDiaChi
             // 
             this.colDiaChi.DataPropertyName = "diachi";
-            this.colDiaChi.FillWeight = 130F;
+            this.colDiaChi.FillWeight = 150F;
             this.colDiaChi.HeaderText = "Địa chỉ";
             this.colDiaChi.MinimumWidth = 6;
             this.colDiaChi.Name = "colDiaChi";
@@ -520,7 +531,7 @@ namespace QuanLyCuaHangVTNN
             // colHanMucNo
             // 
             this.colHanMucNo.DataPropertyName = "hanmucno";
-            this.colHanMucNo.FillWeight = 90F;
+            this.colHanMucNo.FillWeight = 105F;
             this.colHanMucNo.HeaderText = "Hạn mức nợ (đ)";
             this.colHanMucNo.MinimumWidth = 6;
             this.colHanMucNo.Name = "colHanMucNo";
@@ -529,7 +540,7 @@ namespace QuanLyCuaHangVTNN
             // colSoNoHienTai
             // 
             this.colSoNoHienTai.DataPropertyName = "sonohientai";
-            this.colSoNoHienTai.FillWeight = 90F;
+            this.colSoNoHienTai.FillWeight = 105F;
             this.colSoNoHienTai.HeaderText = "Số nợ hiện tại (đ)";
             this.colSoNoHienTai.MinimumWidth = 6;
             this.colSoNoHienTai.Name = "colSoNoHienTai";

@@ -2,31 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmDanhSachHoaDon
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Panel pnlBoLoc;
-        private System.Windows.Forms.Panel pnlVienBoLoc;
-        private System.Windows.Forms.Label lblTim;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.CheckBox chkLocNgay;
-        private System.Windows.Forms.DateTimePicker dtpTuNgay;
-        private System.Windows.Forms.Label lblDen;
-        private System.Windows.Forms.DateTimePicker dtpDenNgay;
-        private System.Windows.Forms.ComboBox cboTrangThaiNo;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.Button btnLamMoi;
-        private System.Windows.Forms.Panel pnlTongHopLoc;
-        private System.Windows.Forms.Label lblTongSoHD;
-        private System.Windows.Forms.Label lblTongDoanhThuLoc;
-        private System.Windows.Forms.Label lblTongDaThuLoc;
-        private System.Windows.Forms.Label lblTongNoLoc;
-        private System.Windows.Forms.Panel pnlDanhSachHD;
-        private System.Windows.Forms.Label lblTieuDeHD;
-        private System.Windows.Forms.Button btnXoaHoaDon;
-        private System.Windows.Forms.DataGridView dgvHoaDon;
-        private System.Windows.Forms.Panel pnlChiTietHD;
-        private System.Windows.Forms.Label lblTieuDeCT;
-        private System.Windows.Forms.DataGridView dgvChiTietHoaDon;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -38,8 +22,13 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -62,6 +51,11 @@ namespace QuanLyCuaHangVTNN
             this.lblTongSoHD = new System.Windows.Forms.Label();
             this.pnlDanhSachHD = new System.Windows.Forms.Panel();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.cmsHoaDon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuCtxInHoaDon = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCtxLamMoi = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCtxXoaHoaDon = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnXoaHoaDon = new System.Windows.Forms.Button();
             this.lblTieuDeHD = new System.Windows.Forms.Label();
             this.pnlChiTietHD = new System.Windows.Forms.Panel();
@@ -71,13 +65,14 @@ namespace QuanLyCuaHangVTNN
             this.pnlTongHopLoc.SuspendLayout();
             this.pnlDanhSachHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
+            this.cmsHoaDon.SuspendLayout();
             this.pnlChiTietHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBoLoc
             // 
-            this.pnlBoLoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlBoLoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBoLoc.BackColor = System.Drawing.Color.White;
             this.pnlBoLoc.Controls.Add(this.btnLamMoi);
@@ -141,7 +136,7 @@ namespace QuanLyCuaHangVTNN
             "Còn nợ mùa vụ"});
             this.cboTrangThaiNo.Location = new System.Drawing.Point(664, 17);
             this.cboTrangThaiNo.Name = "cboTrangThaiNo";
-            this.cboTrangThaiNo.Size = new System.Drawing.Size(164, 29);
+            this.cboTrangThaiNo.Size = new System.Drawing.Size(164, 28);
             this.cboTrangThaiNo.TabIndex = 6;
             // 
             // dtpDenNgay
@@ -151,7 +146,7 @@ namespace QuanLyCuaHangVTNN
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDenNgay.Location = new System.Drawing.Point(532, 17);
             this.dtpDenNgay.Name = "dtpDenNgay";
-            this.dtpDenNgay.Size = new System.Drawing.Size(118, 29);
+            this.dtpDenNgay.Size = new System.Drawing.Size(118, 28);
             this.dtpDenNgay.TabIndex = 5;
             // 
             // lblDen
@@ -160,7 +155,7 @@ namespace QuanLyCuaHangVTNN
             this.lblDen.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.lblDen.Location = new System.Drawing.Point(492, 21);
             this.lblDen.Name = "lblDen";
-            this.lblDen.Size = new System.Drawing.Size(38, 21);
+            this.lblDen.Size = new System.Drawing.Size(41, 21);
             this.lblDen.TabIndex = 4;
             this.lblDen.Text = "Đến:";
             // 
@@ -171,7 +166,7 @@ namespace QuanLyCuaHangVTNN
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTuNgay.Location = new System.Drawing.Point(366, 17);
             this.dtpTuNgay.Name = "dtpTuNgay";
-            this.dtpTuNgay.Size = new System.Drawing.Size(118, 29);
+            this.dtpTuNgay.Size = new System.Drawing.Size(118, 28);
             this.dtpTuNgay.TabIndex = 3;
             // 
             // chkLocNgay
@@ -181,7 +176,7 @@ namespace QuanLyCuaHangVTNN
             this.chkLocNgay.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.chkLocNgay.Location = new System.Drawing.Point(306, 20);
             this.chkLocNgay.Name = "chkLocNgay";
-            this.chkLocNgay.Size = new System.Drawing.Size(55, 25);
+            this.chkLocNgay.Size = new System.Drawing.Size(52, 25);
             this.chkLocNgay.TabIndex = 2;
             this.chkLocNgay.Text = "Từ:";
             this.chkLocNgay.UseVisualStyleBackColor = true;
@@ -194,6 +189,7 @@ namespace QuanLyCuaHangVTNN
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(202, 29);
             this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
             // 
             // lblTim
             // 
@@ -202,7 +198,7 @@ namespace QuanLyCuaHangVTNN
             this.lblTim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblTim.Location = new System.Drawing.Point(14, 21);
             this.lblTim.Name = "lblTim";
-            this.lblTim.Size = new System.Drawing.Size(76, 21);
+            this.lblTim.Size = new System.Drawing.Size(85, 21);
             this.lblTim.TabIndex = 0;
             this.lblTim.Text = "Tìm kiếm:";
             // 
@@ -217,7 +213,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // pnlTongHopLoc
             // 
-            this.pnlTongHopLoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlTongHopLoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTongHopLoc.BackColor = System.Drawing.Color.White;
             this.pnlTongHopLoc.Controls.Add(this.lblTongNoLoc);
@@ -236,7 +232,7 @@ namespace QuanLyCuaHangVTNN
             this.lblTongNoLoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.lblTongNoLoc.Location = new System.Drawing.Point(760, 10);
             this.lblTongNoLoc.Name = "lblTongNoLoc";
-            this.lblTongNoLoc.Size = new System.Drawing.Size(105, 21);
+            this.lblTongNoLoc.Size = new System.Drawing.Size(95, 21);
             this.lblTongNoLoc.TabIndex = 3;
             this.lblTongNoLoc.Text = "Còn nợ: 0 đ";
             // 
@@ -247,7 +243,7 @@ namespace QuanLyCuaHangVTNN
             this.lblTongDaThuLoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
             this.lblTongDaThuLoc.Location = new System.Drawing.Point(505, 10);
             this.lblTongDaThuLoc.Name = "lblTongDaThuLoc";
-            this.lblTongDaThuLoc.Size = new System.Drawing.Size(98, 21);
+            this.lblTongDaThuLoc.Size = new System.Drawing.Size(92, 21);
             this.lblTongDaThuLoc.TabIndex = 2;
             this.lblTongDaThuLoc.Text = "Đã thu: 0 đ";
             // 
@@ -258,7 +254,7 @@ namespace QuanLyCuaHangVTNN
             this.lblTongDoanhThuLoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
             this.lblTongDoanhThuLoc.Location = new System.Drawing.Point(215, 10);
             this.lblTongDoanhThuLoc.Name = "lblTongDoanhThuLoc";
-            this.lblTongDoanhThuLoc.Size = new System.Drawing.Size(166, 21);
+            this.lblTongDoanhThuLoc.Size = new System.Drawing.Size(163, 21);
             this.lblTongDoanhThuLoc.TabIndex = 1;
             this.lblTongDoanhThuLoc.Text = "Tổng doanh thu: 0 đ";
             // 
@@ -275,10 +271,11 @@ namespace QuanLyCuaHangVTNN
             // 
             // pnlDanhSachHD
             // 
-            this.pnlDanhSachHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlDanhSachHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDanhSachHD.BackColor = System.Drawing.Color.White;
             this.pnlDanhSachHD.Controls.Add(this.dgvHoaDon);
+            this.pnlDanhSachHD.Controls.Add(this.btnInHoaDon);
             this.pnlDanhSachHD.Controls.Add(this.btnXoaHoaDon);
             this.pnlDanhSachHD.Controls.Add(this.lblTieuDeHD);
             this.pnlDanhSachHD.Location = new System.Drawing.Point(16, 138);
@@ -289,8 +286,8 @@ namespace QuanLyCuaHangVTNN
             // dgvHoaDon
             // 
             this.dgvHoaDon.AllowUserToAddRows = false;
-            this.dgvHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.White;
@@ -298,15 +295,16 @@ namespace QuanLyCuaHangVTNN
             this.dgvHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHoaDon.ColumnHeadersHeight = 36;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvHoaDon.ContextMenuStrip = this.cmsHoaDon;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -314,14 +312,64 @@ namespace QuanLyCuaHangVTNN
             this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHoaDon.EnableHeadersVisualStyles = false;
             this.dgvHoaDon.Location = new System.Drawing.Point(14, 40);
+            this.dgvHoaDon.MultiSelect = false;
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.ReadOnly = true;
             this.dgvHoaDon.RowHeadersVisible = false;
+            this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 30;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHoaDon.Size = new System.Drawing.Size(985, 180);
             this.dgvHoaDon.TabIndex = 2;
             this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
+            // 
+            // cmsHoaDon
+            // 
+            this.cmsHoaDon.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsHoaDon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCtxInHoaDon,
+            this.mnuCtxLamMoi,
+            this.mnuCtxXoaHoaDon});
+            this.cmsHoaDon.Name = "cmsHoaDon";
+            this.cmsHoaDon.Size = new System.Drawing.Size(238, 76);
+            // 
+            // mnuCtxInHoaDon
+            // 
+            this.mnuCtxInHoaDon.Name = "mnuCtxInHoaDon";
+            this.mnuCtxInHoaDon.Size = new System.Drawing.Size(237, 24);
+            this.mnuCtxInHoaDon.Text = "Xem / In phiếu hóa đơn";
+            this.mnuCtxInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
+            // 
+            // mnuCtxLamMoi
+            // 
+            this.mnuCtxLamMoi.Name = "mnuCtxLamMoi";
+            this.mnuCtxLamMoi.Size = new System.Drawing.Size(237, 24);
+            this.mnuCtxLamMoi.Text = "Làm mới danh sách";
+            this.mnuCtxLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // mnuCtxXoaHoaDon
+            // 
+            this.mnuCtxXoaHoaDon.Name = "mnuCtxXoaHoaDon";
+            this.mnuCtxXoaHoaDon.Size = new System.Drawing.Size(237, 24);
+            this.mnuCtxXoaHoaDon.Text = "Xóa hóa đơn đang chọn";
+            this.mnuCtxXoaHoaDon.Click += new System.EventHandler(this.btnXoaHoaDon_Click);
+            // 
+            // btnInHoaDon
+            // 
+            this.btnInHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.btnInHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnInHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInHoaDon.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnInHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnInHoaDon.Location = new System.Drawing.Point(690, 6);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(150, 28);
+            this.btnInHoaDon.TabIndex = 3;
+            this.btnInHoaDon.Text = "Xem / In phiếu";
+            this.btnInHoaDon.UseVisualStyleBackColor = false;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // btnXoaHoaDon
             // 
@@ -347,14 +395,14 @@ namespace QuanLyCuaHangVTNN
             this.lblTieuDeHD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
             this.lblTieuDeHD.Location = new System.Drawing.Point(14, 10);
             this.lblTieuDeHD.Name = "lblTieuDeHD";
-            this.lblTieuDeHD.Size = new System.Drawing.Size(446, 23);
+            this.lblTieuDeHD.Size = new System.Drawing.Size(500, 23);
             this.lblTieuDeHD.TabIndex = 0;
             this.lblTieuDeHD.Text = "DANH SÁCH HÓA ĐƠN ĐÃ BÁN (Chọn dòng để xem chi tiết)";
             // 
             // pnlChiTietHD
             // 
-            this.pnlChiTietHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlChiTietHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlChiTietHD.BackColor = System.Drawing.Color.White;
             this.pnlChiTietHD.Controls.Add(this.dgvChiTietHoaDon);
@@ -367,8 +415,8 @@ namespace QuanLyCuaHangVTNN
             // dgvChiTietHoaDon
             // 
             this.dgvChiTietHoaDon.AllowUserToAddRows = false;
-            this.dgvChiTietHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvChiTietHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChiTietHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTietHoaDon.BackgroundColor = System.Drawing.Color.White;
@@ -376,7 +424,7 @@ namespace QuanLyCuaHangVTNN
             this.dgvChiTietHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
@@ -384,7 +432,7 @@ namespace QuanLyCuaHangVTNN
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -392,9 +440,11 @@ namespace QuanLyCuaHangVTNN
             this.dgvChiTietHoaDon.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChiTietHoaDon.EnableHeadersVisualStyles = false;
             this.dgvChiTietHoaDon.Location = new System.Drawing.Point(14, 38);
+            this.dgvChiTietHoaDon.MultiSelect = false;
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.ReadOnly = true;
             this.dgvChiTietHoaDon.RowHeadersVisible = false;
+            this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.RowTemplate.Height = 30;
             this.dgvChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(985, 155);
@@ -407,7 +457,7 @@ namespace QuanLyCuaHangVTNN
             this.lblTieuDeCT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
             this.lblTieuDeCT.Location = new System.Drawing.Point(14, 10);
             this.lblTieuDeCT.Name = "lblTieuDeCT";
-            this.lblTieuDeCT.Size = new System.Drawing.Size(277, 23);
+            this.lblTieuDeCT.Size = new System.Drawing.Size(303, 23);
             this.lblTieuDeCT.TabIndex = 0;
             this.lblTieuDeCT.Text = "CHI TIẾT MẶT HÀNG CỦA HÓA ĐƠN";
             // 
@@ -433,12 +483,43 @@ namespace QuanLyCuaHangVTNN
             this.pnlDanhSachHD.ResumeLayout(false);
             this.pnlDanhSachHD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
+            this.cmsHoaDon.ResumeLayout(false);
             this.pnlChiTietHD.ResumeLayout(false);
             this.pnlChiTietHD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlBoLoc;
+        private System.Windows.Forms.Panel pnlVienBoLoc;
+        private System.Windows.Forms.Label lblTim;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.CheckBox chkLocNgay;
+        private System.Windows.Forms.DateTimePicker dtpTuNgay;
+        private System.Windows.Forms.Label lblDen;
+        private System.Windows.Forms.DateTimePicker dtpDenNgay;
+        private System.Windows.Forms.ComboBox cboTrangThaiNo;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Panel pnlTongHopLoc;
+        private System.Windows.Forms.Label lblTongSoHD;
+        private System.Windows.Forms.Label lblTongDoanhThuLoc;
+        private System.Windows.Forms.Label lblTongDaThuLoc;
+        private System.Windows.Forms.Label lblTongNoLoc;
+        private System.Windows.Forms.Panel pnlDanhSachHD;
+        private System.Windows.Forms.Label lblTieuDeHD;
+        private System.Windows.Forms.Button btnInHoaDon;
+        private System.Windows.Forms.Button btnXoaHoaDon;
+        private System.Windows.Forms.DataGridView dgvHoaDon;
+        private System.Windows.Forms.ContextMenuStrip cmsHoaDon;
+        private System.Windows.Forms.ToolStripMenuItem mnuCtxInHoaDon;
+        private System.Windows.Forms.ToolStripMenuItem mnuCtxLamMoi;
+        private System.Windows.Forms.ToolStripMenuItem mnuCtxXoaHoaDon;
+        private System.Windows.Forms.Panel pnlChiTietHD;
+        private System.Windows.Forms.Label lblTieuDeCT;
+        private System.Windows.Forms.DataGridView dgvChiTietHoaDon;
     }
 }

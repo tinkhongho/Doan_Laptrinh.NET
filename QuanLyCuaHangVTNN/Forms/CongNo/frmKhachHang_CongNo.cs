@@ -27,6 +27,9 @@ namespace QuanLyCuaHangVTNN
             LoadDanhSach();
         }
 
+        /// <summary>
+        /// Thiết lập trạng thái đóng mở của các ô nhập liệu và nút lệnh.
+        /// </summary>
         private void SetTrangThai(bool dangNhapLieu)
         {
             txtMaKH.Enabled = (trangThai == "THEM");
@@ -44,6 +47,9 @@ namespace QuanLyCuaHangVTNN
             dgvKhachHang.Enabled = !dangNhapLieu;
         }
 
+        /// <summary>
+        /// Xóa trắng thông tin trên vùng nhập liệu khách hàng.
+        /// </summary>
         private void XoaTrangInput()
         {
             txtMaKH.Clear();
@@ -54,6 +60,9 @@ namespace QuanLyCuaHangVTNN
             txtSoNoHienTai.Text = "0";
         }
 
+        /// <summary>
+        /// Tải danh sách khách hàng và tính tổng công nợ phải thu.
+        /// </summary>
         private void LoadDanhSach()
         {
             try
@@ -109,6 +118,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Hiển thị thông tin dòng khách hàng đang chọn lên các ô nhập.
+        /// </summary>
         private void HienThiDongDangChon(int rowIndex)
         {
             if (rowIndex < 0 || rowIndex >= dgvKhachHang.Rows.Count) return;
@@ -132,6 +144,9 @@ namespace QuanLyCuaHangVTNN
                 HienThiDongDangChon(e.RowIndex);
         }
 
+        /// <summary>
+        /// Sinh tự động mã khách hàng kế tiếp.
+        /// </summary>
         private string TaoMaKHMoi()
         {
             try

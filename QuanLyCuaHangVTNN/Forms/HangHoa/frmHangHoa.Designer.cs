@@ -2,8 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmHangHoa
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -15,14 +22,17 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlThongTin = new System.Windows.Forms.Panel();
             this.pnlVienTren = new System.Windows.Forms.Panel();
             this.lblTieuDe = new System.Windows.Forms.Label();
-            this.lblHuongDan = new System.Windows.Forms.Label();
             this.lblMaHH = new System.Windows.Forms.Label();
             this.txtMaHH = new System.Windows.Forms.TextBox();
             this.lblTenHH = new System.Windows.Forms.Label();
@@ -56,15 +66,15 @@ namespace QuanLyCuaHangVTNN
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
-            this.colHanSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaVon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoatChat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoatChat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaVon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHanSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlThongTin.SuspendLayout();
             this.pnlTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
@@ -77,7 +87,6 @@ namespace QuanLyCuaHangVTNN
             this.pnlThongTin.BackColor = System.Drawing.Color.White;
             this.pnlThongTin.Controls.Add(this.pnlVienTren);
             this.pnlThongTin.Controls.Add(this.lblTieuDe);
-            this.pnlThongTin.Controls.Add(this.lblHuongDan);
             this.pnlThongTin.Controls.Add(this.lblMaHH);
             this.pnlThongTin.Controls.Add(this.txtMaHH);
             this.pnlThongTin.Controls.Add(this.lblTenHH);
@@ -126,17 +135,6 @@ namespace QuanLyCuaHangVTNN
             this.lblTieuDe.Size = new System.Drawing.Size(302, 25);
             this.lblTieuDe.TabIndex = 1;
             this.lblTieuDe.Text = "THÔNG TIN VẬT TƯ - HÀNG HÓA";
-            // 
-            // lblHuongDan
-            // 
-            this.lblHuongDan.AutoSize = true;
-            this.lblHuongDan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblHuongDan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.lblHuongDan.Location = new System.Drawing.Point(295, 14);
-            this.lblHuongDan.Name = "lblHuongDan";
-            this.lblHuongDan.Size = new System.Drawing.Size(476, 20);
-            this.lblHuongDan.TabIndex = 2;
-            this.lblHuongDan.Text = "Quản lý danh mục vật tư nông nghiệp, giá bán, tồn kho và hạn sử dụng";
             // 
             // lblMaHH
             // 
@@ -268,6 +266,7 @@ namespace QuanLyCuaHangVTNN
             this.txtGiaVon.Size = new System.Drawing.Size(160, 29);
             this.txtGiaVon.TabIndex = 16;
             this.txtGiaVon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtGiaVon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChiNhapSo_KeyPress);
             // 
             // lblGiaBan
             // 
@@ -286,6 +285,7 @@ namespace QuanLyCuaHangVTNN
             this.txtGiaBan.Size = new System.Drawing.Size(185, 29);
             this.txtGiaBan.TabIndex = 18;
             this.txtGiaBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChiNhapSo_KeyPress);
             // 
             // lblSoLuongTon
             // 
@@ -306,6 +306,7 @@ namespace QuanLyCuaHangVTNN
             this.txtSoLuongTon.Size = new System.Drawing.Size(189, 29);
             this.txtSoLuongTon.TabIndex = 20;
             this.txtSoLuongTon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSoLuongTon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ChiNhapSo_KeyPress);
             // 
             // btnThem
             // 
@@ -321,6 +322,7 @@ namespace QuanLyCuaHangVTNN
             this.btnThem.TabIndex = 21;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -336,6 +338,7 @@ namespace QuanLyCuaHangVTNN
             this.btnSua.TabIndex = 22;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -351,6 +354,7 @@ namespace QuanLyCuaHangVTNN
             this.btnXoa.TabIndex = 23;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -366,6 +370,7 @@ namespace QuanLyCuaHangVTNN
             this.btnLuu.TabIndex = 24;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
@@ -381,6 +386,7 @@ namespace QuanLyCuaHangVTNN
             this.btnHuy.TabIndex = 25;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThoat
             // 
@@ -397,6 +403,7 @@ namespace QuanLyCuaHangVTNN
             this.btnThoat.TabIndex = 26;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // pnlTimKiem
             // 
@@ -440,7 +447,7 @@ namespace QuanLyCuaHangVTNN
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(90, 43);
+            this.txtTimKiem.Location = new System.Drawing.Point(99, 43);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(220, 29);
             this.txtTimKiem.TabIndex = 2;
@@ -463,10 +470,11 @@ namespace QuanLyCuaHangVTNN
             "Tất cả vật tư",
             "Sắp hết tồn kho",
             "Sắp hết hạn sử dụng"});
-            this.cboLocTrangThai.Location = new System.Drawing.Point(362, 43);
+            this.cboLocTrangThai.Location = new System.Drawing.Point(366, 43);
             this.cboLocTrangThai.Name = "cboLocTrangThai";
             this.cboLocTrangThai.Size = new System.Drawing.Size(200, 29);
             this.cboLocTrangThai.TabIndex = 4;
+            this.cboLocTrangThai.SelectedIndexChanged += new System.EventHandler(this.cboLocTrangThai_SelectedIndexChanged);
             // 
             // btnTimKiem
             // 
@@ -482,6 +490,7 @@ namespace QuanLyCuaHangVTNN
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLamMoi
             // 
@@ -498,6 +507,7 @@ namespace QuanLyCuaHangVTNN
             this.btnLamMoi.TabIndex = 6;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // dgvHangHoa
             // 
@@ -509,14 +519,14 @@ namespace QuanLyCuaHangVTNN
             this.dgvHangHoa.BackgroundColor = System.Drawing.Color.White;
             this.dgvHangHoa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHangHoa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHangHoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHangHoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaHH,
@@ -528,14 +538,14 @@ namespace QuanLyCuaHangVTNN
             this.colGiaBan,
             this.colSoLuongTon,
             this.colHanSuDung});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHangHoa.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHangHoa.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHangHoa.EnableHeadersVisualStyles = false;
             this.dgvHangHoa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.dgvHangHoa.Location = new System.Drawing.Point(16, 82);
@@ -548,68 +558,16 @@ namespace QuanLyCuaHangVTNN
             this.dgvHangHoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHangHoa.Size = new System.Drawing.Size(868, 242);
             this.dgvHangHoa.TabIndex = 7;
+            this.dgvHangHoa.SelectionChanged += new System.EventHandler(this.dgvHangHoa_SelectionChanged);
             // 
-            // colHanSuDung
+            // colMaHH
             // 
-            this.colHanSuDung.DataPropertyName = "hansudung";
-            this.colHanSuDung.FillWeight = 85F;
-            this.colHanSuDung.HeaderText = "Hạn dùng";
-            this.colHanSuDung.MinimumWidth = 6;
-            this.colHanSuDung.Name = "colHanSuDung";
-            this.colHanSuDung.ReadOnly = true;
-            // 
-            // colSoLuongTon
-            // 
-            this.colSoLuongTon.DataPropertyName = "soluongton";
-            this.colSoLuongTon.FillWeight = 65F;
-            this.colSoLuongTon.HeaderText = "Tồn kho";
-            this.colSoLuongTon.MinimumWidth = 6;
-            this.colSoLuongTon.Name = "colSoLuongTon";
-            this.colSoLuongTon.ReadOnly = true;
-            // 
-            // colGiaBan
-            // 
-            this.colGiaBan.DataPropertyName = "giaban";
-            this.colGiaBan.FillWeight = 80F;
-            this.colGiaBan.HeaderText = "Giá bán";
-            this.colGiaBan.MinimumWidth = 6;
-            this.colGiaBan.Name = "colGiaBan";
-            this.colGiaBan.ReadOnly = true;
-            // 
-            // colGiaVon
-            // 
-            this.colGiaVon.DataPropertyName = "giavon";
-            this.colGiaVon.FillWeight = 80F;
-            this.colGiaVon.HeaderText = "Giá vốn";
-            this.colGiaVon.MinimumWidth = 6;
-            this.colGiaVon.Name = "colGiaVon";
-            this.colGiaVon.ReadOnly = true;
-            // 
-            // colHoatChat
-            // 
-            this.colHoatChat.DataPropertyName = "hoatchat";
-            this.colHoatChat.HeaderText = "Hoạt chất";
-            this.colHoatChat.MinimumWidth = 6;
-            this.colHoatChat.Name = "colHoatChat";
-            this.colHoatChat.ReadOnly = true;
-            // 
-            // colDVT
-            // 
-            this.colDVT.DataPropertyName = "dvt";
-            this.colDVT.FillWeight = 55F;
-            this.colDVT.HeaderText = "ĐVT";
-            this.colDVT.MinimumWidth = 6;
-            this.colDVT.Name = "colDVT";
-            this.colDVT.ReadOnly = true;
-            // 
-            // colTenLoai
-            // 
-            this.colTenLoai.DataPropertyName = "tenloai";
-            this.colTenLoai.FillWeight = 95F;
-            this.colTenLoai.HeaderText = "Loại hàng";
-            this.colTenLoai.MinimumWidth = 6;
-            this.colTenLoai.Name = "colTenLoai";
-            this.colTenLoai.ReadOnly = true;
+            this.colMaHH.DataPropertyName = "mahh";
+            this.colMaHH.FillWeight = 65F;
+            this.colMaHH.HeaderText = "Mã hàng";
+            this.colMaHH.MinimumWidth = 6;
+            this.colMaHH.Name = "colMaHH";
+            this.colMaHH.ReadOnly = true;
             // 
             // colTenHH
             // 
@@ -620,14 +578,67 @@ namespace QuanLyCuaHangVTNN
             this.colTenHH.Name = "colTenHH";
             this.colTenHH.ReadOnly = true;
             // 
-            // colMaHH
+            // colTenLoai
             // 
-            this.colMaHH.DataPropertyName = "mahh";
-            this.colMaHH.FillWeight = 65F;
-            this.colMaHH.HeaderText = "Mã hàng";
-            this.colMaHH.MinimumWidth = 6;
-            this.colMaHH.Name = "colMaHH";
-            this.colMaHH.ReadOnly = true;
+            this.colTenLoai.DataPropertyName = "tenloai";
+            this.colTenLoai.FillWeight = 95F;
+            this.colTenLoai.HeaderText = "Loại hàng";
+            this.colTenLoai.MinimumWidth = 6;
+            this.colTenLoai.Name = "colTenLoai";
+            this.colTenLoai.ReadOnly = true;
+            // 
+            // colDVT
+            // 
+            this.colDVT.DataPropertyName = "dvt";
+            this.colDVT.FillWeight = 55F;
+            this.colDVT.HeaderText = "ĐVT";
+            this.colDVT.MinimumWidth = 6;
+            this.colDVT.Name = "colDVT";
+            this.colDVT.ReadOnly = true;
+            // 
+            // colHoatChat
+            // 
+            this.colHoatChat.DataPropertyName = "hoatchat";
+            this.colHoatChat.HeaderText = "Hoạt chất";
+            this.colHoatChat.MinimumWidth = 6;
+            this.colHoatChat.Name = "colHoatChat";
+            this.colHoatChat.ReadOnly = true;
+            // 
+            // colGiaVon
+            // 
+            this.colGiaVon.DataPropertyName = "giavon";
+            this.colGiaVon.FillWeight = 80F;
+            this.colGiaVon.HeaderText = "Giá vốn";
+            this.colGiaVon.MinimumWidth = 6;
+            this.colGiaVon.Name = "colGiaVon";
+            this.colGiaVon.ReadOnly = true;
+            // 
+            // colGiaBan
+            // 
+            this.colGiaBan.DataPropertyName = "giaban";
+            this.colGiaBan.FillWeight = 80F;
+            this.colGiaBan.HeaderText = "Giá bán";
+            this.colGiaBan.MinimumWidth = 6;
+            this.colGiaBan.Name = "colGiaBan";
+            this.colGiaBan.ReadOnly = true;
+            // 
+            // colSoLuongTon
+            // 
+            this.colSoLuongTon.DataPropertyName = "soluongton";
+            this.colSoLuongTon.FillWeight = 65F;
+            this.colSoLuongTon.HeaderText = "Tồn kho";
+            this.colSoLuongTon.MinimumWidth = 6;
+            this.colSoLuongTon.Name = "colSoLuongTon";
+            this.colSoLuongTon.ReadOnly = true;
+            // 
+            // colHanSuDung
+            // 
+            this.colHanSuDung.DataPropertyName = "hansudung";
+            this.colHanSuDung.FillWeight = 85F;
+            this.colHanSuDung.HeaderText = "Hạn dùng";
+            this.colHanSuDung.MinimumWidth = 6;
+            this.colHanSuDung.Name = "colHanSuDung";
+            this.colHanSuDung.ReadOnly = true;
             // 
             // frmHangHoa
             // 
@@ -640,7 +651,8 @@ namespace QuanLyCuaHangVTNN
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.Name = "frmHangHoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Quản lý Hàng hóa & Tồn kho";
+            this.Text = "Quản lý Hàng hóa và Tồn kho";
+            this.Load += new System.EventHandler(this.frm_Load);
             this.pnlThongTin.ResumeLayout(false);
             this.pnlThongTin.PerformLayout();
             this.pnlTimKiem.ResumeLayout(false);
@@ -655,7 +667,6 @@ namespace QuanLyCuaHangVTNN
         private System.Windows.Forms.Panel pnlThongTin;
         private System.Windows.Forms.Panel pnlVienTren;
         private System.Windows.Forms.Label lblTieuDe;
-        private System.Windows.Forms.Label lblHuongDan;
         private System.Windows.Forms.Label lblMaHH;
         private System.Windows.Forms.TextBox txtMaHH;
         private System.Windows.Forms.Label lblTenHH;

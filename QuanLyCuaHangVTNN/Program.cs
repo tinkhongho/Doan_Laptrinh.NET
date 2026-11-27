@@ -6,12 +6,11 @@ namespace QuanLyCuaHangVTNN
 {
     internal static class Program
     {
-        // Bật chế độ High-DPI giúp chữ và giao diện sắc nét 100% trên màn hình Laptop (125% - 150% scale)
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
 
         /// <summary>
-        /// Điểm bắt đầu chạy chương trình Quản lý cửa hàng Vật tư nông nghiệp.
+        /// Điểm khởi đầu của chương trình.
         /// </summary>
         [STAThread]
         static void Main()

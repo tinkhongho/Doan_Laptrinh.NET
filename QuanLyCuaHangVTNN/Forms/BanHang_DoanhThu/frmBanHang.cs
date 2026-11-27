@@ -13,7 +13,6 @@ namespace QuanLyCuaHangVTNN
         private DataTable dtKhachHang;
         private DataTable dtGioHang;
 
-        // Tự động nhận diện cấu trúc cột thực tế từ CSDL QLVTNN
         private bool laMaHDTuTang = false;
         private bool coCotGhiChuHD = false;
         private string cotNguoiLapHD = "";
@@ -37,6 +36,9 @@ namespace QuanLyCuaHangVTNN
             TaoHoaDonMoi();
         }
 
+        /// <summary>
+        /// Khởi tạo bảng tạm chứa danh sách vật tư trong giỏ hàng.
+        /// </summary>
         private void KhoiTaoBangGioHang()
         {
             dtGioHang = new DataTable();
@@ -76,6 +78,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Kiểm tra các cột tùy chọn của bảng hóa đơn trong cơ sở dữ liệu.
+        /// </summary>
         private void KiemTraCauTrucCSDL()
         {
             try
@@ -103,6 +108,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Tải danh sách khách hàng kèm tùy chọn khách mua lẻ vào ComboBox.
+        /// </summary>
         private void NapDanhSachKhachHang()
         {
             try
@@ -140,6 +148,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Tải danh mục vật tư nông nghiệp lên ComboBox chọn hàng.
+        /// </summary>
         private void NapDanhSachHangHoa()
         {
             try
@@ -169,6 +180,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Tự động sinh mã hóa đơn bán hàng kế tiếp.
+        /// </summary>
         private string SinhMaHoaDonMoi()
         {
             if (laMaHDTuTang) return "(Tự động tăng)";
@@ -200,6 +214,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Làm mới thông tin hóa đơn và xóa trống giỏ hàng để lập đơn mới.
+        /// </summary>
         private void TaoHoaDonMoi()
         {
             txtMaHD.Text = SinhMaHoaDonMoi();
@@ -335,6 +352,9 @@ namespace QuanLyCuaHangVTNN
             CapNhatTongThanhToan();
         }
 
+        /// <summary>
+        /// Tính tổng thành tiền của toàn bộ vật tư trong giỏ hàng.
+        /// </summary>
         private decimal TinhTongTienHoaDon()
         {
             decimal tong = 0;
@@ -359,6 +379,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Cập nhật tổng tiền, tiền còn nợ và dư nợ dự kiến sau hóa đơn.
+        /// </summary>
         private void CapNhatTongThanhToan()
         {
             decimal tongTien = TinhTongTienHoaDon();
@@ -468,8 +491,32 @@ namespace QuanLyCuaHangVTNN
                 tran = cn.BeginTransaction();
 
                 string maHDThucTe = txtMaHD.Text.Trim();
+                if (!laMaHDTuTang)
+                {
+                    if (string.IsNullOrEmpty(maHDThucTe))
+                    {
+                        tran.Rollback();
+                        tran = null;
+                        MessageBox.Show("Vui lòng nhập Mã hóa đơn hoặc bấm 'Làm mới' để sinh mã tự động!",
+                            "Thiếu mã hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtMaHD.Focus();
+                        return;
+                    }
 
-                // 1. Lưu bảng hoadon
+                    SqlCommand cmdKiemTraMa = new SqlCommand(
+                        "SELECT COUNT(*) FROM hoadon WHERE mahd = @mahd", cn, tran);
+                    cmdKiemTraMa.Parameters.AddWithValue("@mahd", maHDThucTe);
+                    if (Convert.ToInt32(cmdKiemTraMa.ExecuteScalar()) > 0)
+                    {
+                        tran.Rollback();
+                        tran = null;
+                        MessageBox.Show("Mã hóa đơn \"" + maHDThucTe + "\" đã tồn tại! Vui lòng nhập mã khác hoặc bấm 'Làm mới'.",
+                            "Trùng mã hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtMaHD.Focus();
+                        return;
+                    }
+                }
+
                 string cotInsert = "ngayban, makh, tongtien, dathanhtoan, conno";
                 string valInsert = "@ngayban, @makh, @tongtien, @dathanhtoan, @conno";
 
@@ -513,7 +560,6 @@ namespace QuanLyCuaHangVTNN
                     cmdHD.ExecuteNonQuery();
                 }
 
-                // 2. Lưu từng dòng ct_hoadon & trừ tồn kho hanghoa
                 foreach (DataRow r in dtGioHang.Rows)
                 {
                     string sqlCT = coCotThanhTienCT
@@ -531,13 +577,20 @@ namespace QuanLyCuaHangVTNN
                     cmdCT.ExecuteNonQuery();
 
                     SqlCommand cmdKho = new SqlCommand(
-                        "UPDATE hanghoa SET soluongton = soluongton - @sl WHERE mahh = @mahh", cn, tran);
+                        "UPDATE hanghoa SET soluongton = soluongton - @sl WHERE mahh = @mahh AND ISNULL(soluongton, 0) >= @sl", cn, tran);
                     cmdKho.Parameters.AddWithValue("@sl", Convert.ToInt32(r["soluong"]));
                     cmdKho.Parameters.AddWithValue("@mahh", r["mahh"].ToString());
-                    cmdKho.ExecuteNonQuery();
+                    if (cmdKho.ExecuteNonQuery() == 0)
+                    {
+                        tran.Rollback();
+                        tran = null;
+                        MessageBox.Show("Vật tư \"" + r["tenhh"].ToString() + "\" không đủ số lượng tồn kho để bán!",
+                            "Thiếu tồn kho", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        NapDanhSachHangHoa();
+                        return;
+                    }
                 }
 
-                // 3. Cập nhật công nợ khách hàng nếu ghi nợ mùa vụ
                 if (maKH != DBNull.Value && conNo > 0)
                 {
                     SqlCommand cmdNo = new SqlCommand(
@@ -571,6 +624,24 @@ namespace QuanLyCuaHangVTNN
             NapDanhSachKhachHang();
             NapDanhSachHangHoa();
             TaoHoaDonMoi();
+        }
+
+        private void mnuXoaMatHangGio_Click(object sender, EventArgs e)
+        {
+            btnXoaDong_Click(sender, e);
+        }
+
+        private void mnuXoaTatCaGio_Click(object sender, EventArgs e)
+        {
+            if (dtGioHang.Rows.Count == 0) return;
+
+            DialogResult kq = MessageBox.Show("Bạn có muốn xóa toàn bộ vật tư trong giỏ hàng hiện tại không?",
+                "Xác nhận làm trống giỏ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                dtGioHang.Rows.Clear();
+                CapNhatTongThanhToan();
+            }
         }
     }
 }

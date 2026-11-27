@@ -2,74 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmTrangChu
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.MenuStrip thanhMenu;
-        private System.Windows.Forms.ToolStripMenuItem mnuNhomHangHoa;
-        private System.Windows.Forms.ToolStripMenuItem mnuLoaiHang;
-        private System.Windows.Forms.ToolStripMenuItem mnuHangHoa;
-        private System.Windows.Forms.ToolStripMenuItem mnuNhapHang;
-        private System.Windows.Forms.ToolStripMenuItem mnuNhomBanHang;
-        private System.Windows.Forms.ToolStripMenuItem mnuBanHang;
-        private System.Windows.Forms.ToolStripMenuItem mnuDanhSachHoaDon;
-        private System.Windows.Forms.ToolStripMenuItem mnuThongKeDoanhThu;
-        private System.Windows.Forms.ToolStripMenuItem mnuNhomCongNo;
-        private System.Windows.Forms.ToolStripMenuItem mnuKhachHangCongNo;
-        private System.Windows.Forms.ToolStripMenuItem mnuNhaCungCapCongNo;
-        private System.Windows.Forms.ToolStripMenuItem mnuThuTraNo;
-        private System.Windows.Forms.ToolStripMenuItem mnuHeThong;
-        private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
-        private System.Windows.Forms.StatusStrip thanhTrangThai;
-        private System.Windows.Forms.ToolStripStatusLabel lblTrangThaiNguoiDung;
-        private System.Windows.Forms.Panel pnlMenuTrai;
-        private System.Windows.Forms.Panel pnlDauMenuTrai;
-        private System.Windows.Forms.Label lblTenPhanMem;
-        private System.Windows.Forms.Label lblNguoiDungDangNhap;
-        private System.Windows.Forms.Label lblNhom1;
-        private System.Windows.Forms.Button btnMoLoaiHang;
-        private System.Windows.Forms.Button btnMoHangHoa;
-        private System.Windows.Forms.Button btnMoNhapHang;
-        private System.Windows.Forms.Label lblNhom2;
-        private System.Windows.Forms.Button btnMoBanHang;
-        private System.Windows.Forms.Button btnMoDanhSachHoaDon;
-        private System.Windows.Forms.Button btnMoThongKeDoanhThu;
-        private System.Windows.Forms.Label lblNhom3;
-        private System.Windows.Forms.Button btnMoKhachHangCongNo;
-        private System.Windows.Forms.Button btnMoNhaCungCapCongNo;
-        private System.Windows.Forms.Button btnMoThuTraNo;
-        private System.Windows.Forms.Button btnDangXuat;
-        private System.Windows.Forms.Panel pnlThanhTieuDe;
-        private System.Windows.Forms.Label lblTieuDeChucNang;
-        private System.Windows.Forms.Button btnVeTrangChu;
-        private System.Windows.Forms.Panel pnlNoiDungChinh;
-        private System.Windows.Forms.Panel pnlThongKeTrangChu;
-        private System.Windows.Forms.Button btnLamMoiThongKe;
-        private System.Windows.Forms.Panel pnlTheDoanhThu;
-        private System.Windows.Forms.Panel pnlVienDoanhThu;
-        private System.Windows.Forms.Label lblTieuDeDoanhThu;
-        private System.Windows.Forms.Label lblSoDoanhThu;
-        private System.Windows.Forms.Label lblGhiChuDoanhThu;
-        private System.Windows.Forms.Panel pnlTheLoiNhuan;
-        private System.Windows.Forms.Panel pnlVienLoiNhuan;
-        private System.Windows.Forms.Label lblTieuDeLoiNhuan;
-        private System.Windows.Forms.Label lblSoLoiNhuan;
-        private System.Windows.Forms.Label lblGhiChuLoiNhuan;
-        private System.Windows.Forms.Panel pnlTheCongNoKhach;
-        private System.Windows.Forms.Panel pnlVienCongNoKhach;
-        private System.Windows.Forms.Label lblTieuDeCongNoKhach;
-        private System.Windows.Forms.Label lblSoCongNoKhach;
-        private System.Windows.Forms.Label lblGhiChuCongNoKhach;
-        private System.Windows.Forms.Panel pnlTheTonKho;
-        private System.Windows.Forms.Panel pnlVienTonKho;
-        private System.Windows.Forms.Label lblTieuDeTonKho;
-        private System.Windows.Forms.Label lblSoTonKho;
-        private System.Windows.Forms.Label lblGhiChuTonKho;
-        private System.Windows.Forms.Panel pnlKhungHoaDonGanDay;
-        private System.Windows.Forms.DataGridView dgvHoaDonGanDay;
-        private System.Windows.Forms.Panel pnlKhungKhachHangNo;
-        private System.Windows.Forms.Label lblTieuDeBangCongNo;
-        private System.Windows.Forms.DataGridView dgvKhachHangDangNo;
-        private System.Windows.Forms.ImageList imageList1;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -81,14 +22,18 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.thanhMenu = new System.Windows.Forms.MenuStrip();
             this.mnuNhomHangHoa = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLoaiHang = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,6 +51,8 @@ namespace QuanLyCuaHangVTNN
             this.mnuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhTrangThai = new System.Windows.Forms.StatusStrip();
             this.lblTrangThaiNguoiDung = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTrangThaiThoiGian = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tmrDongHo = new System.Windows.Forms.Timer(this.components);
             this.pnlThanhTieuDe = new System.Windows.Forms.Panel();
             this.btnVeTrangChu = new System.Windows.Forms.Button();
             this.lblTieuDeChucNang = new System.Windows.Forms.Label();
@@ -197,27 +144,30 @@ namespace QuanLyCuaHangVTNN
             this.mnuHangHoa,
             this.mnuNhapHang});
             this.mnuNhomHangHoa.Name = "mnuNhomHangHoa";
-            this.mnuNhomHangHoa.Size = new System.Drawing.Size(165, 25);
-            this.mnuNhomHangHoa.Text = "1. Quản lý Hàng hóa";
+            this.mnuNhomHangHoa.Size = new System.Drawing.Size(149, 25);
+            this.mnuNhomHangHoa.Text = "&Quản lý Hàng hóa";
             // 
             // mnuLoaiHang
             // 
             this.mnuLoaiHang.Name = "mnuLoaiHang";
-            this.mnuLoaiHang.Size = new System.Drawing.Size(296, 26);
+            this.mnuLoaiHang.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.mnuLoaiHang.Size = new System.Drawing.Size(340, 26);
             this.mnuLoaiHang.Text = "Danh mục Loại vật tư";
             this.mnuLoaiHang.Click += new System.EventHandler(this.mnuLoaiHang_Click);
             // 
             // mnuHangHoa
             // 
             this.mnuHangHoa.Name = "mnuHangHoa";
-            this.mnuHangHoa.Size = new System.Drawing.Size(296, 26);
+            this.mnuHangHoa.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.mnuHangHoa.Size = new System.Drawing.Size(340, 26);
             this.mnuHangHoa.Text = "Quản lý Hàng hóa && Tồn kho";
             this.mnuHangHoa.Click += new System.EventHandler(this.mnuHangHoa_Click);
             // 
             // mnuNhapHang
             // 
             this.mnuNhapHang.Name = "mnuNhapHang";
-            this.mnuNhapHang.Size = new System.Drawing.Size(296, 26);
+            this.mnuNhapHang.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.mnuNhapHang.Size = new System.Drawing.Size(340, 26);
             this.mnuNhapHang.Text = "Nhập hàng từ Nhà cung cấp";
             this.mnuNhapHang.Click += new System.EventHandler(this.mnuNhapHang_Click);
             // 
@@ -228,27 +178,30 @@ namespace QuanLyCuaHangVTNN
             this.mnuDanhSachHoaDon,
             this.mnuThongKeDoanhThu});
             this.mnuNhomBanHang.Name = "mnuNhomBanHang";
-            this.mnuNhomBanHang.Size = new System.Drawing.Size(199, 25);
-            this.mnuNhomBanHang.Text = "2. Bán hàng && Doanh thu";
+            this.mnuNhomBanHang.Size = new System.Drawing.Size(186, 25);
+            this.mnuNhomBanHang.Text = "&Bán hàng và Doanh thu";
             // 
             // mnuBanHang
             // 
             this.mnuBanHang.Name = "mnuBanHang";
-            this.mnuBanHang.Size = new System.Drawing.Size(326, 26);
+            this.mnuBanHang.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.mnuBanHang.Size = new System.Drawing.Size(360, 26);
             this.mnuBanHang.Text = "Lập Hóa đơn Bán hàng";
             this.mnuBanHang.Click += new System.EventHandler(this.mnuBanHang_Click);
             // 
             // mnuDanhSachHoaDon
             // 
             this.mnuDanhSachHoaDon.Name = "mnuDanhSachHoaDon";
-            this.mnuDanhSachHoaDon.Size = new System.Drawing.Size(326, 26);
+            this.mnuDanhSachHoaDon.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.mnuDanhSachHoaDon.Size = new System.Drawing.Size(360, 26);
             this.mnuDanhSachHoaDon.Text = "Danh sách Hóa đơn đã bán";
             this.mnuDanhSachHoaDon.Click += new System.EventHandler(this.mnuDanhSachHoaDon_Click);
             // 
             // mnuThongKeDoanhThu
             // 
             this.mnuThongKeDoanhThu.Name = "mnuThongKeDoanhThu";
-            this.mnuThongKeDoanhThu.Size = new System.Drawing.Size(326, 26);
+            this.mnuThongKeDoanhThu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.mnuThongKeDoanhThu.Size = new System.Drawing.Size(360, 26);
             this.mnuThongKeDoanhThu.Text = "Thống kê Doanh thu && Lợi nhuận";
             this.mnuThongKeDoanhThu.Click += new System.EventHandler(this.mnuThongKeDoanhThu_Click);
             // 
@@ -259,27 +212,30 @@ namespace QuanLyCuaHangVTNN
             this.mnuNhaCungCapCongNo,
             this.mnuThuTraNo});
             this.mnuNhomCongNo.Name = "mnuNhomCongNo";
-            this.mnuNhomCongNo.Size = new System.Drawing.Size(158, 25);
-            this.mnuNhomCongNo.Text = "3. Quản lý Công nợ";
+            this.mnuNhomCongNo.Size = new System.Drawing.Size(142, 25);
+            this.mnuNhomCongNo.Text = "Quản lý &Công nợ";
             // 
             // mnuKhachHangCongNo
             // 
             this.mnuKhachHangCongNo.Name = "mnuKhachHangCongNo";
-            this.mnuKhachHangCongNo.Size = new System.Drawing.Size(327, 26);
+            this.mnuKhachHangCongNo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.K)));
+            this.mnuKhachHangCongNo.Size = new System.Drawing.Size(365, 26);
             this.mnuKhachHangCongNo.Text = "Khách hàng && Công nợ phải thu";
             this.mnuKhachHangCongNo.Click += new System.EventHandler(this.mnuKhachHangCongNo_Click);
             // 
             // mnuNhaCungCapCongNo
             // 
             this.mnuNhaCungCapCongNo.Name = "mnuNhaCungCapCongNo";
-            this.mnuNhaCungCapCongNo.Size = new System.Drawing.Size(327, 26);
+            this.mnuNhaCungCapCongNo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.mnuNhaCungCapCongNo.Size = new System.Drawing.Size(365, 26);
             this.mnuNhaCungCapCongNo.Text = "Nhà cung cấp && Công nợ phải trả";
             this.mnuNhaCungCapCongNo.Click += new System.EventHandler(this.mnuNhaCungCapCongNo_Click);
             // 
             // mnuThuTraNo
             // 
             this.mnuThuTraNo.Name = "mnuThuTraNo";
-            this.mnuThuTraNo.Size = new System.Drawing.Size(327, 26);
+            this.mnuThuTraNo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.mnuThuTraNo.Size = new System.Drawing.Size(365, 26);
             this.mnuThuTraNo.Text = "Lập phiếu Thu nợ / Trả nợ";
             this.mnuThuTraNo.Click += new System.EventHandler(this.mnuThuTraNo_Click);
             // 
@@ -288,13 +244,14 @@ namespace QuanLyCuaHangVTNN
             this.mnuHeThong.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuDangXuat});
             this.mnuHeThong.Name = "mnuHeThong";
-            this.mnuHeThong.Size = new System.Drawing.Size(104, 25);
-            this.mnuHeThong.Text = "4. Hệ thống";
+            this.mnuHeThong.Size = new System.Drawing.Size(88, 25);
+            this.mnuHeThong.Text = "&Hệ thống";
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(164, 26);
+            this.mnuDangXuat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.mnuDangXuat.Size = new System.Drawing.Size(210, 26);
             this.mnuDangXuat.Text = "Đăng xuất";
             this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
             // 
@@ -304,7 +261,8 @@ namespace QuanLyCuaHangVTNN
             this.thanhTrangThai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.thanhTrangThai.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.thanhTrangThai.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblTrangThaiNguoiDung});
+            this.lblTrangThaiNguoiDung,
+            this.lblTrangThaiThoiGian});
             this.thanhTrangThai.Location = new System.Drawing.Point(0, 684);
             this.thanhTrangThai.Name = "thanhTrangThai";
             this.thanhTrangThai.Size = new System.Drawing.Size(1320, 26);
@@ -314,8 +272,23 @@ namespace QuanLyCuaHangVTNN
             // 
             this.lblTrangThaiNguoiDung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
             this.lblTrangThaiNguoiDung.Name = "lblTrangThaiNguoiDung";
-            this.lblTrangThaiNguoiDung.Size = new System.Drawing.Size(138, 20);
+            this.lblTrangThaiNguoiDung.Size = new System.Drawing.Size(1135, 20);
+            this.lblTrangThaiNguoiDung.Spring = true;
             this.lblTrangThaiNguoiDung.Text = "Trạng thái hệ thống";
+            this.lblTrangThaiNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTrangThaiThoiGian
+            // 
+            this.lblTrangThaiThoiGian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.lblTrangThaiThoiGian.Name = "lblTrangThaiThoiGian";
+            this.lblTrangThaiThoiGian.Size = new System.Drawing.Size(170, 20);
+            this.lblTrangThaiThoiGian.Text = "Thời gian: --:--:--";
+            // 
+            // tmrDongHo
+            // 
+            this.tmrDongHo.Enabled = true;
+            this.tmrDongHo.Interval = 1000;
+            this.tmrDongHo.Tick += new System.EventHandler(this.tmrDongHo_Tick);
             // 
             // pnlThanhTieuDe
             // 
@@ -429,24 +402,25 @@ namespace QuanLyCuaHangVTNN
             this.dgvHoaDonGanDay.BackgroundColor = System.Drawing.Color.White;
             this.dgvHoaDonGanDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHoaDonGanDay.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHoaDonGanDay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHoaDonGanDay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvHoaDonGanDay.ColumnHeadersHeight = 40;
             this.dgvHoaDonGanDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHoaDonGanDay.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHoaDonGanDay.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvHoaDonGanDay.EnableHeadersVisualStyles = false;
             this.dgvHoaDonGanDay.Location = new System.Drawing.Point(12, 11);
+            this.dgvHoaDonGanDay.MultiSelect = false;
             this.dgvHoaDonGanDay.Name = "dgvHoaDonGanDay";
             this.dgvHoaDonGanDay.ReadOnly = true;
             this.dgvHoaDonGanDay.RowHeadersVisible = false;
@@ -721,24 +695,25 @@ namespace QuanLyCuaHangVTNN
             this.dgvKhachHangDangNo.BackgroundColor = System.Drawing.Color.White;
             this.dgvKhachHangDangNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvKhachHangDangNo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKhachHangDangNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKhachHangDangNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvKhachHangDangNo.ColumnHeadersHeight = 40;
             this.dgvKhachHangDangNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(178)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKhachHangDangNo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(178)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKhachHangDangNo.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvKhachHangDangNo.EnableHeadersVisualStyles = false;
             this.dgvKhachHangDangNo.Location = new System.Drawing.Point(12, 11);
+            this.dgvKhachHangDangNo.MultiSelect = false;
             this.dgvKhachHangDangNo.Name = "dgvKhachHangDangNo";
             this.dgvKhachHangDangNo.ReadOnly = true;
             this.dgvKhachHangDangNo.RowHeadersVisible = false;
@@ -799,7 +774,7 @@ namespace QuanLyCuaHangVTNN
             this.btnMoThuTraNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoThuTraNo.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnMoThuTraNo.ForeColor = System.Drawing.Color.White;
-            this.btnMoThuTraNo.Location = new System.Drawing.Point(0, 534);
+            this.btnMoThuTraNo.Location = new System.Drawing.Point(1, 546);
             this.btnMoThuTraNo.Name = "btnMoThuTraNo";
             this.btnMoThuTraNo.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnMoThuTraNo.Size = new System.Drawing.Size(275, 42);
@@ -818,12 +793,12 @@ namespace QuanLyCuaHangVTNN
             this.btnMoNhaCungCapCongNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoNhaCungCapCongNo.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnMoNhaCungCapCongNo.ForeColor = System.Drawing.Color.White;
-            this.btnMoNhaCungCapCongNo.Location = new System.Drawing.Point(0, 498);
+            this.btnMoNhaCungCapCongNo.Location = new System.Drawing.Point(1, 498);
             this.btnMoNhaCungCapCongNo.Name = "btnMoNhaCungCapCongNo";
             this.btnMoNhaCungCapCongNo.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnMoNhaCungCapCongNo.Size = new System.Drawing.Size(275, 42);
+            this.btnMoNhaCungCapCongNo.Size = new System.Drawing.Size(286, 42);
             this.btnMoNhaCungCapCongNo.TabIndex = 11;
-            this.btnMoNhaCungCapCongNo.Text = "▸  Nhà cung cấp && Nợ phải trả";
+            this.btnMoNhaCungCapCongNo.Text = "▸  Nhà cung cấp và Nợ phải trả";
             this.btnMoNhaCungCapCongNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMoNhaCungCapCongNo.UseVisualStyleBackColor = false;
             this.btnMoNhaCungCapCongNo.Click += new System.EventHandler(this.mnuNhaCungCapCongNo_Click);
@@ -842,7 +817,7 @@ namespace QuanLyCuaHangVTNN
             this.btnMoKhachHangCongNo.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnMoKhachHangCongNo.Size = new System.Drawing.Size(275, 42);
             this.btnMoKhachHangCongNo.TabIndex = 10;
-            this.btnMoKhachHangCongNo.Text = "▸  Khách hàng && Nợ phải thu";
+            this.btnMoKhachHangCongNo.Text = "▸  Khách hàng và Nợ phải thu";
             this.btnMoKhachHangCongNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMoKhachHangCongNo.UseVisualStyleBackColor = false;
             this.btnMoKhachHangCongNo.Click += new System.EventHandler(this.mnuKhachHangCongNo_Click);
@@ -959,7 +934,7 @@ namespace QuanLyCuaHangVTNN
             this.btnMoHangHoa.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnMoHangHoa.Size = new System.Drawing.Size(275, 42);
             this.btnMoHangHoa.TabIndex = 3;
-            this.btnMoHangHoa.Text = "▸  Hàng hóa && Tồn kho";
+            this.btnMoHangHoa.Text = "▸  Hàng hóa và Tồn kho";
             this.btnMoHangHoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMoHangHoa.UseVisualStyleBackColor = false;
             this.btnMoHangHoa.Click += new System.EventHandler(this.mnuHangHoa_Click);
@@ -1076,6 +1051,74 @@ namespace QuanLyCuaHangVTNN
 
         #endregion
 
+        private System.Windows.Forms.MenuStrip thanhMenu;
+        private System.Windows.Forms.ToolStripMenuItem mnuNhomHangHoa;
+        private System.Windows.Forms.ToolStripMenuItem mnuLoaiHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuHangHoa;
+        private System.Windows.Forms.ToolStripMenuItem mnuNhapHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuNhomBanHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuBanHang;
+        private System.Windows.Forms.ToolStripMenuItem mnuDanhSachHoaDon;
+        private System.Windows.Forms.ToolStripMenuItem mnuThongKeDoanhThu;
+        private System.Windows.Forms.ToolStripMenuItem mnuNhomCongNo;
+        private System.Windows.Forms.ToolStripMenuItem mnuKhachHangCongNo;
+        private System.Windows.Forms.ToolStripMenuItem mnuNhaCungCapCongNo;
+        private System.Windows.Forms.ToolStripMenuItem mnuThuTraNo;
+        private System.Windows.Forms.ToolStripMenuItem mnuHeThong;
+        private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
+        private System.Windows.Forms.StatusStrip thanhTrangThai;
+        private System.Windows.Forms.ToolStripStatusLabel lblTrangThaiNguoiDung;
+        private System.Windows.Forms.ToolStripStatusLabel lblTrangThaiThoiGian;
+        private System.Windows.Forms.Timer tmrDongHo;
+        private System.Windows.Forms.Panel pnlMenuTrai;
+        private System.Windows.Forms.Panel pnlDauMenuTrai;
+        private System.Windows.Forms.Label lblTenPhanMem;
+        private System.Windows.Forms.Label lblNguoiDungDangNhap;
+        private System.Windows.Forms.Label lblNhom1;
+        private System.Windows.Forms.Button btnMoLoaiHang;
+        private System.Windows.Forms.Button btnMoHangHoa;
+        private System.Windows.Forms.Button btnMoNhapHang;
+        private System.Windows.Forms.Label lblNhom2;
+        private System.Windows.Forms.Button btnMoBanHang;
+        private System.Windows.Forms.Button btnMoDanhSachHoaDon;
+        private System.Windows.Forms.Button btnMoThongKeDoanhThu;
+        private System.Windows.Forms.Label lblNhom3;
+        private System.Windows.Forms.Button btnMoKhachHangCongNo;
+        private System.Windows.Forms.Button btnMoNhaCungCapCongNo;
+        private System.Windows.Forms.Button btnMoThuTraNo;
+        private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.Panel pnlThanhTieuDe;
+        private System.Windows.Forms.Label lblTieuDeChucNang;
+        private System.Windows.Forms.Button btnVeTrangChu;
+        private System.Windows.Forms.Panel pnlNoiDungChinh;
+        private System.Windows.Forms.Panel pnlThongKeTrangChu;
+        private System.Windows.Forms.Button btnLamMoiThongKe;
+        private System.Windows.Forms.Panel pnlTheDoanhThu;
+        private System.Windows.Forms.Panel pnlVienDoanhThu;
+        private System.Windows.Forms.Label lblTieuDeDoanhThu;
+        private System.Windows.Forms.Label lblSoDoanhThu;
+        private System.Windows.Forms.Label lblGhiChuDoanhThu;
+        private System.Windows.Forms.Panel pnlTheLoiNhuan;
+        private System.Windows.Forms.Panel pnlVienLoiNhuan;
+        private System.Windows.Forms.Label lblTieuDeLoiNhuan;
+        private System.Windows.Forms.Label lblSoLoiNhuan;
+        private System.Windows.Forms.Label lblGhiChuLoiNhuan;
+        private System.Windows.Forms.Panel pnlTheCongNoKhach;
+        private System.Windows.Forms.Panel pnlVienCongNoKhach;
+        private System.Windows.Forms.Label lblTieuDeCongNoKhach;
+        private System.Windows.Forms.Label lblSoCongNoKhach;
+        private System.Windows.Forms.Label lblGhiChuCongNoKhach;
+        private System.Windows.Forms.Panel pnlTheTonKho;
+        private System.Windows.Forms.Panel pnlVienTonKho;
+        private System.Windows.Forms.Label lblTieuDeTonKho;
+        private System.Windows.Forms.Label lblSoTonKho;
+        private System.Windows.Forms.Label lblGhiChuTonKho;
+        private System.Windows.Forms.Panel pnlKhungHoaDonGanDay;
+        private System.Windows.Forms.DataGridView dgvHoaDonGanDay;
+        private System.Windows.Forms.Panel pnlKhungKhachHangNo;
+        private System.Windows.Forms.Label lblTieuDeBangCongNo;
+        private System.Windows.Forms.DataGridView dgvKhachHangDangNo;
+        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnThayDoiPanel;
         private System.Windows.Forms.Label lblTieuDeBangHoaDon;

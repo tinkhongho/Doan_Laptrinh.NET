@@ -2,43 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmThongKeDoanhThu
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Panel pnlBoLocTK;
-        private System.Windows.Forms.Panel pnlVienBoLocTK;
-        private System.Windows.Forms.Label lblTuNgay;
-        private System.Windows.Forms.DateTimePicker dtpTuNgay;
-        private System.Windows.Forms.Label lblDenNgay;
-        private System.Windows.Forms.DateTimePicker dtpDenNgay;
-        private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button btnTatCa;
-        private System.Windows.Forms.Label lblKyThongKe;
-        private System.Windows.Forms.Panel pnlTheDoanhThu;
-        private System.Windows.Forms.Panel pnlVienDoanhThu;
-        private System.Windows.Forms.Label lblTieuDeDoanhThu;
-        private System.Windows.Forms.Label lblSoDoanhThu;
-        private System.Windows.Forms.Label lblGhiChuDoanhThu;
-        private System.Windows.Forms.Panel pnlTheThucThu;
-        private System.Windows.Forms.Panel pnlVienThucThu;
-        private System.Windows.Forms.Label lblTieuDeThucThu;
-        private System.Windows.Forms.Label lblSoThucThu;
-        private System.Windows.Forms.Label lblGhiChuThucThu;
-        private System.Windows.Forms.Panel pnlTheLoiNhuan;
-        private System.Windows.Forms.Panel pnlVienLoiNhuan;
-        private System.Windows.Forms.Label lblTieuDeLoiNhuan;
-        private System.Windows.Forms.Label lblSoLoiNhuan;
-        private System.Windows.Forms.Label lblGhiChuLoiNhuan;
-        private System.Windows.Forms.Panel pnlTheCongNo;
-        private System.Windows.Forms.Panel pnlVienCongNo;
-        private System.Windows.Forms.Label lblTieuDeCongNo;
-        private System.Windows.Forms.Label lblSoCongNo;
-        private System.Windows.Forms.Label lblGhiChuCongNo;
-        private System.Windows.Forms.Panel pnlTheoNgay;
-        private System.Windows.Forms.Label lblTieuDeNgay;
-        private System.Windows.Forms.DataGridView dgvThongKeTheoNgay;
-        private System.Windows.Forms.Panel pnlTheoMatHang;
-        private System.Windows.Forms.Label lblTieuDeMatHang;
-        private System.Windows.Forms.DataGridView dgvTopSanPham;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -50,6 +22,10 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,6 +34,7 @@ namespace QuanLyCuaHangVTNN
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBoLocTK = new System.Windows.Forms.Panel();
             this.lblKyThongKe = new System.Windows.Forms.Label();
+            this.btnXuatBaoCao = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
@@ -108,6 +85,7 @@ namespace QuanLyCuaHangVTNN
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBoLocTK.BackColor = System.Drawing.Color.White;
             this.pnlBoLocTK.Controls.Add(this.lblKyThongKe);
+            this.pnlBoLocTK.Controls.Add(this.btnXuatBaoCao);
             this.pnlBoLocTK.Controls.Add(this.btnTatCa);
             this.pnlBoLocTK.Controls.Add(this.btnThongKe);
             this.pnlBoLocTK.Controls.Add(this.dtpDenNgay);
@@ -125,12 +103,28 @@ namespace QuanLyCuaHangVTNN
             this.lblKyThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblKyThongKe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.lblKyThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
-            this.lblKyThongKe.Location = new System.Drawing.Point(775, 19);
+            this.lblKyThongKe.Location = new System.Drawing.Point(804, 19);
             this.lblKyThongKe.Name = "lblKyThongKe";
-            this.lblKyThongKe.Size = new System.Drawing.Size(224, 24);
-            this.lblKyThongKe.TabIndex = 6;
+            this.lblKyThongKe.Size = new System.Drawing.Size(198, 24);
+            this.lblKyThongKe.TabIndex = 7;
             this.lblKyThongKe.Text = "Kỳ: Toàn bộ dữ liệu";
             this.lblKyThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnXuatBaoCao
+            // 
+            this.btnXuatBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.btnXuatBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXuatBaoCao.FlatAppearance.BorderSize = 0;
+            this.btnXuatBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatBaoCao.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+            this.btnXuatBaoCao.ForeColor = System.Drawing.Color.White;
+            this.btnXuatBaoCao.Location = new System.Drawing.Point(676, 15);
+            this.btnXuatBaoCao.Name = "btnXuatBaoCao";
+            this.btnXuatBaoCao.Size = new System.Drawing.Size(122, 32);
+            this.btnXuatBaoCao.TabIndex = 6;
+            this.btnXuatBaoCao.Text = "Xuất file .txt";
+            this.btnXuatBaoCao.UseVisualStyleBackColor = false;
+            this.btnXuatBaoCao.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
             // 
             // btnTatCa
             // 
@@ -140,9 +134,9 @@ namespace QuanLyCuaHangVTNN
             this.btnTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTatCa.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.btnTatCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
-            this.btnTatCa.Location = new System.Drawing.Point(626, 15);
+            this.btnTatCa.Location = new System.Drawing.Point(546, 15);
             this.btnTatCa.Name = "btnTatCa";
-            this.btnTatCa.Size = new System.Drawing.Size(140, 32);
+            this.btnTatCa.Size = new System.Drawing.Size(124, 32);
             this.btnTatCa.TabIndex = 5;
             this.btnTatCa.Text = "Tất cả thời gian";
             this.btnTatCa.UseVisualStyleBackColor = false;
@@ -156,9 +150,9 @@ namespace QuanLyCuaHangVTNN
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Location = new System.Drawing.Point(480, 15);
+            this.btnThongKe.Location = new System.Drawing.Point(418, 15);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(136, 32);
+            this.btnThongKe.Size = new System.Drawing.Size(122, 32);
             this.btnThongKe.TabIndex = 4;
             this.btnThongKe.Text = "Xem thống kê";
             this.btnThongKe.UseVisualStyleBackColor = false;
@@ -169,9 +163,9 @@ namespace QuanLyCuaHangVTNN
             this.dtpDenNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpDenNgay.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDenNgay.Location = new System.Drawing.Point(324, 16);
+            this.dtpDenNgay.Location = new System.Drawing.Point(290, 16);
             this.dtpDenNgay.Name = "dtpDenNgay";
-            this.dtpDenNgay.Size = new System.Drawing.Size(140, 29);
+            this.dtpDenNgay.Size = new System.Drawing.Size(120, 29);
             this.dtpDenNgay.TabIndex = 3;
             // 
             // lblDenNgay
@@ -179,7 +173,7 @@ namespace QuanLyCuaHangVTNN
             this.lblDenNgay.AutoSize = true;
             this.lblDenNgay.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
             this.lblDenNgay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblDenNgay.Location = new System.Drawing.Point(242, 20);
+            this.lblDenNgay.Location = new System.Drawing.Point(210, 20);
             this.lblDenNgay.Name = "lblDenNgay";
             this.lblDenNgay.Size = new System.Drawing.Size(78, 21);
             this.lblDenNgay.TabIndex = 2;
@@ -190,9 +184,9 @@ namespace QuanLyCuaHangVTNN
             this.dtpTuNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpTuNgay.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTuNgay.Location = new System.Drawing.Point(88, 16);
+            this.dtpTuNgay.Location = new System.Drawing.Point(84, 16);
             this.dtpTuNgay.Name = "dtpTuNgay";
-            this.dtpTuNgay.Size = new System.Drawing.Size(140, 29);
+            this.dtpTuNgay.Size = new System.Drawing.Size(120, 29);
             this.dtpTuNgay.TabIndex = 1;
             // 
             // lblTuNgay
@@ -459,6 +453,7 @@ namespace QuanLyCuaHangVTNN
             this.dgvThongKeTheoNgay.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvThongKeTheoNgay.EnableHeadersVisualStyles = false;
             this.dgvThongKeTheoNgay.Location = new System.Drawing.Point(14, 42);
+            this.dgvThongKeTheoNgay.MultiSelect = false;
             this.dgvThongKeTheoNgay.Name = "dgvThongKeTheoNgay";
             this.dgvThongKeTheoNgay.ReadOnly = true;
             this.dgvThongKeTheoNgay.RowHeadersVisible = false;
@@ -519,6 +514,7 @@ namespace QuanLyCuaHangVTNN
             this.dgvTopSanPham.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTopSanPham.EnableHeadersVisualStyles = false;
             this.dgvTopSanPham.Location = new System.Drawing.Point(14, 42);
+            this.dgvTopSanPham.MultiSelect = false;
             this.dgvTopSanPham.Name = "dgvTopSanPham";
             this.dgvTopSanPham.ReadOnly = true;
             this.dgvTopSanPham.RowHeadersVisible = false;
@@ -572,5 +568,42 @@ namespace QuanLyCuaHangVTNN
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlBoLocTK;
+        private System.Windows.Forms.Panel pnlVienBoLocTK;
+        private System.Windows.Forms.Label lblTuNgay;
+        private System.Windows.Forms.DateTimePicker dtpTuNgay;
+        private System.Windows.Forms.Label lblDenNgay;
+        private System.Windows.Forms.DateTimePicker dtpDenNgay;
+        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Button btnTatCa;
+        private System.Windows.Forms.Button btnXuatBaoCao;
+        private System.Windows.Forms.Label lblKyThongKe;
+        private System.Windows.Forms.Panel pnlTheDoanhThu;
+        private System.Windows.Forms.Panel pnlVienDoanhThu;
+        private System.Windows.Forms.Label lblTieuDeDoanhThu;
+        private System.Windows.Forms.Label lblSoDoanhThu;
+        private System.Windows.Forms.Label lblGhiChuDoanhThu;
+        private System.Windows.Forms.Panel pnlTheThucThu;
+        private System.Windows.Forms.Panel pnlVienThucThu;
+        private System.Windows.Forms.Label lblTieuDeThucThu;
+        private System.Windows.Forms.Label lblSoThucThu;
+        private System.Windows.Forms.Label lblGhiChuThucThu;
+        private System.Windows.Forms.Panel pnlTheLoiNhuan;
+        private System.Windows.Forms.Panel pnlVienLoiNhuan;
+        private System.Windows.Forms.Label lblTieuDeLoiNhuan;
+        private System.Windows.Forms.Label lblSoLoiNhuan;
+        private System.Windows.Forms.Label lblGhiChuLoiNhuan;
+        private System.Windows.Forms.Panel pnlTheCongNo;
+        private System.Windows.Forms.Panel pnlVienCongNo;
+        private System.Windows.Forms.Label lblTieuDeCongNo;
+        private System.Windows.Forms.Label lblSoCongNo;
+        private System.Windows.Forms.Label lblGhiChuCongNo;
+        private System.Windows.Forms.Panel pnlTheoNgay;
+        private System.Windows.Forms.Label lblTieuDeNgay;
+        private System.Windows.Forms.DataGridView dgvThongKeTheoNgay;
+        private System.Windows.Forms.Panel pnlTheoMatHang;
+        private System.Windows.Forms.Label lblTieuDeMatHang;
+        private System.Windows.Forms.DataGridView dgvTopSanPham;
     }
 }

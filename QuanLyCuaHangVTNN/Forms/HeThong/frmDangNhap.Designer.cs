@@ -2,24 +2,15 @@ namespace QuanLyCuaHangVTNN
 {
     partial class frmDangNhap
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Panel pnlKhungTrai;
-        private System.Windows.Forms.Label lblTenCuaHang;
-        private System.Windows.Forms.Label lblMoTaCuaHang;
-        private System.Windows.Forms.Label lblThongTinNhom;
-        private System.Windows.Forms.Panel pnlVienTren;
-        private System.Windows.Forms.Label lblTieuDeDangNhap;
-        private System.Windows.Forms.Label lblHuongDan;
-        private System.Windows.Forms.Label lblTenDangNhap;
-        private System.Windows.Forms.Label lblMatKhau;
-        private System.Windows.Forms.TextBox txtTenDangNhap;
-        private System.Windows.Forms.Panel pnlGachChanTen;
-        private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.Panel pnlGachChanMatKhau;
-        private System.Windows.Forms.CheckBox chkHienMatKhau;
-        private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Button btnThoat;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -31,6 +22,10 @@ namespace QuanLyCuaHangVTNN
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             this.pnlVienTren = new System.Windows.Forms.Panel();
@@ -266,5 +261,22 @@ namespace QuanLyCuaHangVTNN
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlKhungTrai;
+        private System.Windows.Forms.Label lblTenCuaHang;
+        private System.Windows.Forms.Label lblMoTaCuaHang;
+        private System.Windows.Forms.Label lblThongTinNhom;
+        private System.Windows.Forms.Panel pnlVienTren;
+        private System.Windows.Forms.Label lblTieuDeDangNhap;
+        private System.Windows.Forms.Label lblHuongDan;
+        private System.Windows.Forms.Label lblTenDangNhap;
+        private System.Windows.Forms.Label lblMatKhau;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
+        private System.Windows.Forms.Panel pnlGachChanTen;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.Panel pnlGachChanMatKhau;
+        private System.Windows.Forms.CheckBox chkHienMatKhau;
+        private System.Windows.Forms.Button btnDangNhap;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

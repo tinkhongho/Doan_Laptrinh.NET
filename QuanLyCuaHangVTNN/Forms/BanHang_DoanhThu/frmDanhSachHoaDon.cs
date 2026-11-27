@@ -1,6 +1,8 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangVTNN
@@ -20,9 +22,19 @@ namespace QuanLyCuaHangVTNN
             dtpTuNgay.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dtpDenNgay.Value = DateTime.Now;
             cboTrangThaiNo.SelectedIndex = 0;
+
+            if (KetNoiDB.QuyenHan == "Nhân viên")
+            {
+                btnXoaHoaDon.Enabled = false;
+                mnuCtxXoaHoaDon.Enabled = false;
+            }
+
             NapDanhSachHoaDon();
         }
 
+        /// <summary>
+        /// Truy vấn danh sách hóa đơn theo điều kiện lọc và tính tổng hợp doanh thu.
+        /// </summary>
         private void NapDanhSachHoaDon()
         {
             try
@@ -73,7 +85,6 @@ namespace QuanLyCuaHangVTNN
                 dgvHoaDon.DataSource = dt;
                 DinhDangLuoiHoaDon();
 
-                // Tính tổng hợp
                 decimal tongDT = 0, tongThu = 0, tongNo = 0;
                 foreach (DataRow r in dt.Rows)
                 {
@@ -104,6 +115,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Thiết lập tiêu đề cột và định dạng hiển thị cho bảng hóa đơn.
+        /// </summary>
         private void DinhDangLuoiHoaDon()
         {
             if (dgvHoaDon.Columns.Count == 0) return;
@@ -136,6 +150,9 @@ namespace QuanLyCuaHangVTNN
             dgvHoaDon.Columns["conno"].DefaultCellStyle.Format = "N0";
         }
 
+        /// <summary>
+        /// Tải chi tiết các mặt hàng và lợi nhuận của hóa đơn đang chọn.
+        /// </summary>
         private void NapChiTietHoaDon(string maHD)
         {
             try
@@ -217,6 +234,153 @@ namespace QuanLyCuaHangVTNN
             NapDanhSachHoaDon();
         }
 
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                NapDanhSachHoaDon();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            if (dgvHoaDon.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn trên danh sách để xem và in phiếu!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string maHD = Convert.ToString(dgvHoaDon.CurrentRow.Cells["mahd"].Value);
+            NapChiTietHoaDon(maHD);
+
+            PrintDocument taiLieuIn = new PrintDocument();
+            taiLieuIn.DocumentName = "HoaDon_" + maHD;
+            taiLieuIn.PrintPage += new PrintPageEventHandler(TaiLieuIn_PrintPage);
+
+            PrintPreviewDialog hopThoaiXemIn = new PrintPreviewDialog();
+            hopThoaiXemIn.Document = taiLieuIn;
+            hopThoaiXemIn.Width = 860;
+            hopThoaiXemIn.Height = 680;
+            hopThoaiXemIn.StartPosition = FormStartPosition.CenterParent;
+            hopThoaiXemIn.Text = "Xem trước phiếu in Hóa đơn [" + maHD + "] - Cửa hàng VTNN";
+            hopThoaiXemIn.ShowDialog();
+        }
+
+        /// <summary>
+        /// Trình bày nội dung phiếu in hóa đơn bán hàng bằng GDI+.
+        /// </summary>
+        private void TaiLieuIn_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            if (dgvHoaDon.CurrentRow == null) return;
+
+            Graphics g = e.Graphics;
+            DataGridViewRow hdRow = dgvHoaDon.CurrentRow;
+
+            string maHD = Convert.ToString(hdRow.Cells["mahd"].Value);
+            string ngayBan = hdRow.Cells["ngayban"].Value != DBNull.Value
+                ? Convert.ToDateTime(hdRow.Cells["ngayban"].Value).ToString("dd/MM/yyyy")
+                : DateTime.Today.ToString("dd/MM/yyyy");
+            string tenKH = Convert.ToString(hdRow.Cells["tenkh"].Value);
+            string sdt = Convert.ToString(hdRow.Cells["sdt"].Value);
+            decimal tongTien = hdRow.Cells["tongtien"].Value != DBNull.Value ? Convert.ToDecimal(hdRow.Cells["tongtien"].Value) : 0m;
+            decimal daThu = hdRow.Cells["dathanhtoan"].Value != DBNull.Value ? Convert.ToDecimal(hdRow.Cells["dathanhtoan"].Value) : 0m;
+            decimal conNo = hdRow.Cells["conno"].Value != DBNull.Value ? Convert.ToDecimal(hdRow.Cells["conno"].Value) : 0m;
+
+            using (Font fCuaHang = new Font("Segoe UI", 14F, FontStyle.Bold))
+            using (Font fTieuDe = new Font("Segoe UI", 16F, FontStyle.Bold))
+            using (Font fDam = new Font("Segoe UI", 10F, FontStyle.Bold))
+            using (Font fThuong = new Font("Segoe UI", 10F, FontStyle.Regular))
+            using (Font fNghieng = new Font("Segoe UI", 9.5F, FontStyle.Italic))
+            using (Pen butDam = new Pen(Color.FromArgb(46, 125, 50), 1.5F))
+            using (Pen butManh = new Pen(Color.Gray, 0.8F))
+            using (SolidBrush coXanh = new SolidBrush(Color.FromArgb(27, 94, 32)))
+            {
+                float trai = 60F;
+                float phai = e.PageBounds.Width - 60F;
+                float y = 50F;
+
+                g.DrawString("CỬA HÀNG VẬT TƯ NÔNG NGHIỆP", fCuaHang, coXanh, trai, y);
+                y += 28F;
+                g.DrawString("Chuyên cung cấp Phân bón - Thuốc BVTV - Hạt giống - Dụng cụ nông nghiệp", fNghieng, Brushes.DimGray, trai, y);
+                y += 26F;
+                g.DrawLine(butDam, trai, y, phai, y);
+                y += 18F;
+
+                StringFormat canGiua = new StringFormat { Alignment = StringAlignment.Center };
+                StringFormat canPhai = new StringFormat { Alignment = StringAlignment.Far };
+
+                g.DrawString("HÓA ĐƠN BÁN HÀNG", fTieuDe, coXanh, (trai + phai) / 2F, y, canGiua);
+                y += 38F;
+
+                g.DrawString("Mã hóa đơn: " + maHD, fDam, Brushes.Black, trai, y);
+                g.DrawString("Ngày bán: " + ngayBan, fThuong, Brushes.Black, phai, y, canPhai);
+                y += 24F;
+                g.DrawString("Khách hàng: " + tenKH, fThuong, Brushes.Black, trai, y);
+                if (!string.IsNullOrEmpty(sdt))
+                    g.DrawString("SĐT: " + sdt, fThuong, Brushes.Black, phai, y, canPhai);
+                y += 30F;
+
+                float xSTT = trai;
+                float xTen = trai + 45F;
+                float xSL = phai - 250F;
+                float xGia = phai - 130F;
+                float xThanhTien = phai;
+
+                g.FillRectangle(Brushes.WhiteSmoke, trai, y - 4F, phai - trai, 28F);
+                g.DrawRectangle(butManh, trai, y - 4F, phai - trai, 28F);
+                g.DrawString("STT", fDam, Brushes.Black, xSTT + 4F, y);
+                g.DrawString("Tên vật tư nông nghiệp", fDam, Brushes.Black, xTen, y);
+                g.DrawString("SL", fDam, Brushes.Black, xSL, y, canPhai);
+                g.DrawString("Đơn giá", fDam, Brushes.Black, xGia, y, canPhai);
+                g.DrawString("Thành tiền", fDam, Brushes.Black, xThanhTien - 4F, y, canPhai);
+                y += 30F;
+
+                int stt = 1;
+                foreach (DataGridViewRow ct in dgvChiTietHoaDon.Rows)
+                {
+                    if (ct.IsNewRow) continue;
+                    string tenHH = Convert.ToString(ct.Cells["tenhh"].Value);
+                    int sl = Convert.ToInt32(ct.Cells["soluong"].Value);
+                    decimal gia = Convert.ToDecimal(ct.Cells["dongiaban"].Value);
+                    decimal tt = Convert.ToDecimal(ct.Cells["thanhtien"].Value);
+
+                    g.DrawString(stt.ToString(), fThuong, Brushes.Black, xSTT + 6F, y);
+                    g.DrawString(tenHH, fThuong, Brushes.Black, new RectangleF(xTen, y, xSL - xTen - 35F, 24F));
+                    g.DrawString(sl.ToString("N0"), fThuong, Brushes.Black, xSL, y, canPhai);
+                    g.DrawString(gia.ToString("N0"), fThuong, Brushes.Black, xGia, y, canPhai);
+                    g.DrawString(tt.ToString("N0"), fThuong, Brushes.Black, xThanhTien - 4F, y, canPhai);
+
+                    y += 26F;
+                    g.DrawLine(butManh, trai, y - 3F, phai, y - 3F);
+                    stt++;
+                }
+
+                y += 12F;
+                g.DrawString("Tổng tiền hàng:", fDam, Brushes.Black, xGia - 10F, y, canPhai);
+                g.DrawString(string.Format("{0:N0} đ", tongTien), fDam, Brushes.Black, xThanhTien - 4F, y, canPhai);
+                y += 24F;
+
+                g.DrawString("Khách đã thanh toán:", fThuong, Brushes.Black, xGia - 10F, y, canPhai);
+                g.DrawString(string.Format("{0:N0} đ", daThu), fThuong, coXanh, xThanhTien - 4F, y, canPhai);
+                y += 24F;
+
+                g.DrawString("Còn nợ mùa vụ:", fDam, Brushes.Black, xGia - 10F, y, canPhai);
+                g.DrawString(string.Format("{0:N0} đ", conNo), fDam, conNo > 0 ? Brushes.Firebrick : Brushes.Black, xThanhTien - 4F, y, canPhai);
+                y += 45F;
+
+                string nguoiLap = string.IsNullOrEmpty(KetNoiDB.HoTen) ? "Nhân viên bán hàng" : KetNoiDB.HoTen;
+                g.DrawString("Khách hàng", fDam, Brushes.Black, trai + 90F, y, canGiua);
+                g.DrawString("Người lập phiếu", fDam, Brushes.Black, phai - 110F, y, canGiua);
+                y += 20F;
+                g.DrawString("(Ký, ghi rõ họ tên)", fNghieng, Brushes.DimGray, trai + 90F, y, canGiua);
+                g.DrawString(nguoiLap, fNghieng, Brushes.DimGray, phai - 110F, y, canGiua);
+            }
+
+            e.HasMorePages = false;
+        }
+
         private void btnXoaHoaDon_Click(object sender, EventArgs e)
         {
             if (dgvHoaDon.CurrentRow == null)
@@ -242,7 +406,6 @@ namespace QuanLyCuaHangVTNN
                 KetNoiDB.MoKetNoi(cn);
                 tran = cn.BeginTransaction();
 
-                // 1. Lấy chi tiết hóa đơn để hoàn lại số lượng tồn kho
                 SqlCommand cmdGetCT = new SqlCommand("SELECT mahh, soluong FROM ct_hoadon WHERE mahd = @mahd", cn, tran);
                 cmdGetCT.Parameters.AddWithValue("@mahd", maHD);
                 DataTable dtCT = new DataTable();
@@ -257,7 +420,6 @@ namespace QuanLyCuaHangVTNN
                     cmdHoanKho.ExecuteNonQuery();
                 }
 
-                // 2. Giảm công nợ khách hàng nếu hóa đơn có ghi nợ
                 if (maKH != null && maKH != DBNull.Value && conNo > 0)
                 {
                     SqlCommand cmdGiamNo = new SqlCommand(
@@ -268,7 +430,6 @@ namespace QuanLyCuaHangVTNN
                     cmdGiamNo.ExecuteNonQuery();
                 }
 
-                // 3. Xóa chi tiết hóa đơn và hóa đơn chính
                 SqlCommand cmdDelCT = new SqlCommand("DELETE FROM ct_hoadon WHERE mahd = @mahd", cn, tran);
                 cmdDelCT.Parameters.AddWithValue("@mahd", maHD);
                 cmdDelCT.ExecuteNonQuery();

@@ -26,8 +26,8 @@ namespace QuanLyCuaHangVTNN
 
             lblNguoiDungDangNhap.Text = hoTen;
             lblTrangThaiNguoiDung.Text = "Người dùng: " + hoTen + "  |  Quyền hạn: " + quyen + "  |  CSDL: QLVTNN";
+            lblTrangThaiThoiGian.Text = "Thời gian: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
-            // Phân quyền: Nhân viên không được mở màn hình Thống kê Doanh thu chi tiết
             if (KetNoiDB.QuyenHan == "Nhân viên")
             {
                 mnuThongKeDoanhThu.Enabled = false;
@@ -38,7 +38,7 @@ namespace QuanLyCuaHangVTNN
         }
 
         /// <summary>
-        /// Tải số liệu Thống kê Doanh thu, Lợi nhuận, Công nợ và Tồn kho trực tiếp từ SQL Server lên Trang chủ
+        /// Tổng hợp số liệu doanh thu, lợi nhuận, công nợ và tồn kho hiển thị lên trang chủ.
         /// </summary>
         private void NapThongKeTrangChu()
         {
@@ -46,7 +46,6 @@ namespace QuanLyCuaHangVTNN
             {
                 KetNoiDB.MoKetNoi(cn);
 
-                // 1. Thống kê Tổng doanh thu, Thực thu lúc bán và Số hóa đơn
                 SqlCommand cmdDoanhThu = new SqlCommand(
                     "SELECT COUNT(*), ISNULL(SUM(tongtien), 0), ISNULL(SUM(dathanhtoan), 0) FROM hoadon", cn);
                 SqlDataReader drDT = cmdDoanhThu.ExecuteReader();
@@ -61,7 +60,6 @@ namespace QuanLyCuaHangVTNN
                 }
                 drDT.Close();
 
-                // 2. Thống kê Lợi nhuận gộp = SUM((dongiaban - giavon) * soluong) + Tiền thu nợ
                 SqlCommand cmdLoiNhuan = new SqlCommand(
                     "SELECT ISNULL(SUM((dongiaban - giavon) * soluong), 0) FROM ct_hoadon", cn);
                 decimal loiNhuanGop = Convert.ToDecimal(cmdLoiNhuan.ExecuteScalar());
@@ -73,7 +71,6 @@ namespace QuanLyCuaHangVTNN
                 lblSoLoiNhuan.Text = string.Format("{0:N0} đ", loiNhuanGop);
                 lblGhiChuLoiNhuan.Text = string.Format("Thu nợ khách: {0:N0} đ", tienThuNo);
 
-                // 3. Thống kê Tổng Công nợ Khách hàng (Phải thu)
                 SqlCommand cmdCongNoKH = new SqlCommand(
                     "SELECT COUNT(*), ISNULL(SUM(sonohientai), 0) FROM khachhang WHERE sonohientai > 0", cn);
                 SqlDataReader drKH = cmdCongNoKH.ExecuteReader();
@@ -86,7 +83,6 @@ namespace QuanLyCuaHangVTNN
                 }
                 drKH.Close();
 
-                // 4. Thống kê Công nợ Nhà cung cấp (Phải trả) & Số mặt hàng tồn kho
                 SqlCommand cmdNoNCC = new SqlCommand(
                     "SELECT ISNULL(SUM(congnoncc), 0) FROM nhacungcap", cn);
                 decimal tongNoNCC = Convert.ToDecimal(cmdNoNCC.ExecuteScalar());
@@ -103,7 +99,6 @@ namespace QuanLyCuaHangVTNN
                 }
                 drHH.Close();
 
-                // 5. Bảng bên trái: Danh sách Hóa đơn & Doanh thu gần đây
                 string sqlHoaDon = @"SELECT TOP 10 h.mahd, h.ngayban, k.tenkh, h.tongtien, h.dathanhtoan, h.conno
                                      FROM hoadon h
                                      LEFT JOIN khachhang k ON h.makh = k.makh
@@ -138,7 +133,6 @@ namespace QuanLyCuaHangVTNN
                     dgvHoaDonGanDay.Columns["conno"].DefaultCellStyle.Format = "N0";
                 }
 
-                // 6. Bảng bên phải: Danh sách Khách hàng đang nợ
                 string sqlKhachNo = @"SELECT makh, tenkh, sdt, sonohientai, hanmucno
                                       FROM khachhang
                                       WHERE sonohientai > 0
@@ -170,7 +164,6 @@ namespace QuanLyCuaHangVTNN
             }
             catch
             {
-                // Nếu chưa chạy script SQL thì giữ giá trị mặc định trên giao diện
             }
         }
 
@@ -190,13 +183,13 @@ namespace QuanLyCuaHangVTNN
         }
 
         /// <summary>
-        /// Đổi màu nút đang được chọn trên thanh Menu bên trái
+        /// Đổi màu làm nổi bật nút chức năng đang chọn trên thanh menu trái.
         /// </summary>
         private void DanhDauNutMenuTrai(Button btnMoi)
         {
             if (nutDangChon != null)
             {
-                nutDangChon.BackColor = Color.FromArgb(0);
+                nutDangChon.BackColor = Color.Transparent;
                 nutDangChon.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular);
             }
 
@@ -209,13 +202,15 @@ namespace QuanLyCuaHangVTNN
         }
 
         /// <summary>
-        /// Nhúng Form con hiển thị gọn ngay trong khung pnlNoiDungChinh
+        /// Nhúng và hiển thị Form con bên trong vùng nội dung chính.
         /// </summary>
         private void MoFormCon(Form fCon, string tieuDe, Button btnMenu)
         {
-            if (formHienTai != null)
+            Form formCu = formHienTai;
+            formHienTai = null;
+            if (formCu != null)
             {
-                formHienTai.Close();
+                formCu.Close();
             }
 
             DanhDauNutMenuTrai(btnMenu);
@@ -242,6 +237,9 @@ namespace QuanLyCuaHangVTNN
             fCon.Show();
         }
 
+        /// <summary>
+        /// Đóng Form con hiện tại và quay về màn hình thống kê trang chủ.
+        /// </summary>
         private void HienThiTrangChu()
         {
             if (formHienTai != null)
@@ -252,7 +250,7 @@ namespace QuanLyCuaHangVTNN
             }
 
             DanhDauNutMenuTrai(null);
-            lblTieuDeChucNang.Text = "TRANG CHỦ - THỐNG KÊ TỔNG QUAN DOANH THU && CÔNG NỢ";
+            lblTieuDeChucNang.Text = "TRANG CHỦ - THỐNG KÊ TỔNG QUAN DOANH THU VÀ CÔNG NỢ";
             btnVeTrangChu.Visible = false;
             pnlThongKeTrangChu.Visible = true;
             pnlThongKeTrangChu.BringToFront();
@@ -264,52 +262,54 @@ namespace QuanLyCuaHangVTNN
             HienThiTrangChu();
         }
 
-        // --- 1. NHÓM QUẢN LÝ HÀNG HÓA (TÍN) ---
         private void mnuLoaiHang_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmLoaiHang(), "1.1. Danh mục Loại vật tư nông nghiệp", btnMoLoaiHang);
+            MoFormCon(new frmLoaiHang(), "Danh mục Loại vật tư nông nghiệp", btnMoLoaiHang);
         }
 
         private void mnuHangHoa_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmHangHoa(), "1.2. Quản lý Hàng hóa && Tồn kho", btnMoHangHoa);
+            MoFormCon(new frmHangHoa(), "Quản lý Hàng hóa và Tồn kho", btnMoHangHoa);
         }
 
         private void mnuNhapHang_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmNhapHang(), "1.3. Lập phiếu Nhập hàng từ Nhà cung cấp", btnMoNhapHang);
+            MoFormCon(new frmNhapHang(), "Lập phiếu Nhập hàng từ Nhà cung cấp", btnMoNhapHang);
         }
 
-        // --- 2. NHÓM BÁN HÀNG & DOANH THU (THIỆN) ---
         private void mnuBanHang_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmBanHang(), "2.1. Lập Hóa đơn Bán hàng (Thanh toán / Ghi nợ mùa vụ)", btnMoBanHang);
+            MoFormCon(new frmBanHang(), "Lập Hóa đơn Bán hàng (Thanh toán / Ghi nợ mùa vụ)", btnMoBanHang);
         }
 
         private void mnuDanhSachHoaDon_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmDanhSachHoaDon(), "2.2. Tra cứu Danh sách Hóa đơn đã bán", btnMoDanhSachHoaDon);
+            MoFormCon(new frmDanhSachHoaDon(), "Tra cứu Danh sách Hóa đơn đã bán", btnMoDanhSachHoaDon);
         }
 
         private void mnuThongKeDoanhThu_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmThongKeDoanhThu(), "2.3. Thống kê Doanh thu - Thực thu - Lợi nhuận", btnMoThongKeDoanhThu);
+            MoFormCon(new frmThongKeDoanhThu(), "Thống kê Doanh thu - Thực thu - Lợi nhuận", btnMoThongKeDoanhThu);
         }
 
-        // --- 3. NHÓM QUẢN LÝ CÔNG NỢ (TÂN) ---
         private void mnuKhachHangCongNo_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmKhachHang_CongNo(), "3.1. Quản lý Khách hàng && Công nợ phải thu", btnMoKhachHangCongNo);
+            MoFormCon(new frmKhachHang_CongNo(), "Quản lý Khách hàng và Công nợ phải thu", btnMoKhachHangCongNo);
         }
 
         private void mnuNhaCungCapCongNo_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmNhaCungCap_CongNo(), "3.2. Quản lý Nhà cung cấp && Công nợ phải trả", btnMoNhaCungCapCongNo);
+            MoFormCon(new frmNhaCungCap_CongNo(), "Quản lý Nhà cung cấp và Công nợ phải trả", btnMoNhaCungCapCongNo);
         }
 
         private void mnuThuTraNo_Click(object sender, EventArgs e)
         {
-            MoFormCon(new frmThuTraNo(), "3.3. Lập phiếu Thu nợ khách hàng / Trả nợ NCC", btnMoThuTraNo);
+            MoFormCon(new frmThuTraNo(), "Lập phiếu Thu nợ khách hàng / Trả nợ NCC", btnMoThuTraNo);
+        }
+
+        private void tmrDongHo_Tick(object sender, EventArgs e)
+        {
+            lblTrangThaiThoiGian.Text = "Thời gian: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void mnuDangXuat_Click(object sender, EventArgs e)

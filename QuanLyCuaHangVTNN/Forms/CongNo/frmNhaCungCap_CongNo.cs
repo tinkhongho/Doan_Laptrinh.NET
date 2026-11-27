@@ -24,6 +24,9 @@ namespace QuanLyCuaHangVTNN
             LoadDanhSach();
         }
 
+        /// <summary>
+        /// Thiết lập trạng thái đóng mở của các ô nhập liệu và nút lệnh.
+        /// </summary>
         private void SetTrangThai(bool dangNhapLieu)
         {
             txtMaNCC.Enabled = (trangThai == "THEM");
@@ -40,6 +43,9 @@ namespace QuanLyCuaHangVTNN
             dgvNhaCungCap.Enabled = !dangNhapLieu;
         }
 
+        /// <summary>
+        /// Xóa trắng thông tin trên vùng nhập liệu nhà cung cấp.
+        /// </summary>
         private void XoaTrangInput()
         {
             txtMaNCC.Clear();
@@ -49,6 +55,9 @@ namespace QuanLyCuaHangVTNN
             txtCongNoNCC.Text = "0";
         }
 
+        /// <summary>
+        /// Tải danh sách nhà cung cấp và tính tổng công nợ phải trả.
+        /// </summary>
         private void LoadDanhSach()
         {
             try
@@ -104,6 +113,9 @@ namespace QuanLyCuaHangVTNN
             }
         }
 
+        /// <summary>
+        /// Hiển thị thông tin nhà cung cấp đang chọn lên các ô nhập.
+        /// </summary>
         private void HienThiDongDangChon(int rowIndex)
         {
             if (rowIndex < 0 || rowIndex >= dgvNhaCungCap.Rows.Count) return;
@@ -124,6 +136,9 @@ namespace QuanLyCuaHangVTNN
                 HienThiDongDangChon(e.RowIndex);
         }
 
+        /// <summary>
+        /// Sinh tự động mã nhà cung cấp kế tiếp.
+        /// </summary>
         private string TaoMaNCCMoi()
         {
             try
